@@ -77,7 +77,7 @@ const TabNavigation = () => {
       case "featured":
         return (
           <div className="p-6 mt-4 bg-gray-50 dark:bg-gray-800 rounded-md">
-            <p className="text-lg">This is the "featured" tab. This text is a placeholder that I will later replace with the actual content.</p>
+            <p className="text-lg">This is the &quot;featured&quot; tab. This text is a placeholder that I will later replace with the actual content.</p>
             {/* You can place your Featured component here */}
           </div>
         );

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Bell, Trash2, Filter, X, Loader2, CheckCircle2, AlertCircle, Trophy, UserPlus, UserMinus, CreditCard, Wallet, ChevronDown } from "lucide-react";
+import { Bell, Trash2, Filter, X, Loader2, CheckCircle2, AlertCircle, Trophy, UserPlus, UserMinus, CreditCard, Wallet, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import moment from 'moment';
 
@@ -639,7 +639,7 @@ const Notifications = () => {
               <Bell className="h-8 w-8 text-gray-400 mb-2" />
               <h2 className="text-lg font-semibold">No notifications</h2>
               <p className="text-sm text-gray-400">
-                We'll notify you when something important happens
+                We&apos;ll notify you when something important happens
               </p>
             </div>
           ) : (
