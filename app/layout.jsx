@@ -145,7 +145,7 @@ export default function RootLayout({ children }) {
                 {children}
               </main>
               {/* <PWAInstallPrompt /> */}
-              <Footer />
+              {/* <Footer /> */}
             </ErrorBoundary>
           </StyledJsxRegistry>
         </body>
