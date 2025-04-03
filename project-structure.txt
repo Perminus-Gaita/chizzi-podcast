@@ -1,0 +1,1407 @@
+.
+├── api-lib
+│   ├── constants.js
+│   ├── db
+│   │   ├── comment.js
+│   │   ├── competition.js
+│   │   ├── index.js
+│   │   ├── media.js
+│   │   ├── room.js
+│   │   ├── uploads.js
+│   │   ├── user.js
+│   │   ├── vote.js
+│   │   └── youtube.js
+│   ├── error-handling
+│   │   └── custom-error.js
+│   ├── facebook_api.js
+│   ├── iot-core
+│   │   ├── get-iot-core-https-url.js
+│   │   └── get-iot-core-web-sockets-url.js
+│   ├── mongodb.js
+│   ├── nc.js
+│   ├── validation
+│   │   └── validate-request-body.js
+│   └── youtube_api.js
+├── app
+│   ├── analytics
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── tab-items
+│   │   │   │   ├── overview.jsx
+│   │   │   │   ├── revenue.jsx
+│   │   │   │   └── tournaments.jsx
+│   │   │   └── tab-navigation.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── analytics2
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── api
+│   │   ├── @
+│   │   ├── accounts
+│   │   │   └── route.js
+│   │   ├── analytics
+│   │   │   ├── overview
+│   │   │   │   └── route.js
+│   │   │   ├── revenue
+│   │   │   │   └── route.js
+│   │   │   └── tournaments
+│   │   │       └── route.js
+│   │   ├── auth
+│   │   │   ├── google
+│   │   │   │   └── sign-in
+│   │   │   │       ├── callback
+│   │   │   │       │   └── route.js
+│   │   │   │       └── initiate
+│   │   │   │           └── route.js
+│   │   │   └── log-out
+│   │   │       └── route.js
+│   │   ├── cards
+│   │   │   ├── create-room
+│   │   │   │   └── route.js
+│   │   │   ├── create-test-room
+│   │   │   │   └── route.js
+│   │   │   ├── delete-room
+│   │   │   │   └── route.js
+│   │   │   ├── getlobbychat
+│   │   │   │   └── route.js
+│   │   │   ├── get-matches
+│   │   │   │   └── route.js
+│   │   │   ├── get_room
+│   │   │   │   └── route.js
+│   │   │   ├── get-rooms
+│   │   │   │   └── route.js
+│   │   │   ├── join_room
+│   │   │   │   └── route.js
+│   │   │   ├── leaderboards
+│   │   │   │   └── route.js
+│   │   │   ├── lobbychat
+│   │   │   │   └── route.js
+│   │   │   ├── play
+│   │   │   │   └── route.js
+│   │   │   ├── play1
+│   │   │   │   └── route.js
+│   │   │   ├── socket
+│   │   │   │   └── session
+│   │   │   │       └── route.js
+│   │   │   └── timed-play
+│   │   │       └── route.js
+│   │   ├── cron
+│   │   │   └── daily
+│   │   │       └── route.js
+│   │   ├── emails
+│   │   │   └── route.js
+│   │   ├── giveaways
+│   │   │   ├── cast_vote.js
+│   │   │   ├── create_entry.js
+│   │   │   ├── create_tag.js
+│   │   │   ├── delete_entry_tag.js
+│   │   │   ├── delete_tag.js
+│   │   │   ├── entry.js
+│   │   │   ├── get_comments.js
+│   │   │   ├── get_entries
+│   │   │   │   └── route.js
+│   │   │   ├── get_entries.js
+│   │   │   ├── get_entries_with_comments
+│   │   │   │   └── route.js
+│   │   │   ├── get_entries_with_comments.js
+│   │   │   ├── get_entries_with_details
+│   │   │   │   └── route.js
+│   │   │   ├── get_entries_with_details.js
+│   │   │   ├── get_entries_with_votes
+│   │   │   │   └── route.js
+│   │   │   ├── get_entries_with_votes.js
+│   │   │   ├── get_entry
+│   │   │   │   └── route.js
+│   │   │   ├── get_entry_comments.js
+│   │   │   ├── get_entry.js
+│   │   │   ├── get_entry_votes.js
+│   │   │   ├── get_giveaway_details
+│   │   │   │   └── route.js
+│   │   │   ├── get_giveaway_details.js
+│   │   │   ├── get_giveaway.js
+│   │   │   ├── get_votes.js
+│   │   │   ├── insert_comment
+│   │   │   │   └── route.js
+│   │   │   ├── insert_comment.js
+│   │   │   ├── like_comment.js
+│   │   │   ├── submit_entry.js
+│   │   │   └── tag_entry.js
+│   │   ├── hello
+│   │   │   └── route.js
+│   │   ├── mqtt
+│   │   │   └── url
+│   │   │       └── route.js
+│   │   ├── notifications
+│   │   │   ├── clear-all
+│   │   │   │   └── route.js
+│   │   │   ├── delete
+│   │   │   │   └── route.js
+│   │   │   ├── fetch
+│   │   │   │   └── route.js
+│   │   │   ├── mark-read
+│   │   │   │   └── route.js
+│   │   │   ├── mqtt
+│   │   │   │   └── route.js
+│   │   │   ├── publish
+│   │   │   │   └── route.js
+│   │   │   ├── route.js
+│   │   │   └── unread-count
+│   │   │       └── route.js
+│   │   ├── onboarding
+│   │   │   ├── connect
+│   │   │   │   └── route.js
+│   │   │   ├── create
+│   │   │   │   └── route.js
+│   │   │   └── discover
+│   │   │       └── route.js
+│   │   ├── payments
+│   │   │   ├── deposit
+│   │   │   │   └── paystack
+│   │   │   │       └── route.js
+│   │   │   ├── sponsor
+│   │   │   │   └── paystack
+│   │   │   │       └── route.js
+│   │   │   ├── subscription
+│   │   │   │   └── paystack
+│   │   │   │       └── initialize-transaction
+│   │   │   │           └── route.js
+│   │   │   └── withdraw
+│   │   │       └── paystack
+│   │   │           ├── create-transfer-recipient
+│   │   │           │   └── route.js
+│   │   │           ├── get-payment-details
+│   │   │           │   └── route.js
+│   │   │           └── route.js
+│   │   ├── push
+│   │   │   └── route.js
+│   │   ├── rps
+│   │   │   ├── create_room
+│   │   │   │   └── route.js
+│   │   │   ├── get_room
+│   │   │   │   └── route.js
+│   │   │   ├── get_rooms
+│   │   │   │   └── route.js
+│   │   │   └── join_room
+│   │   │       └── route.js
+│   │   ├── s3
+│   │   │   ├── multipart
+│   │   │   │   ├── [objectKey]
+│   │   │   │   │   └── [uploadId]
+│   │   │   │   │       └── route.js
+│   │   │   │   ├── route.js
+│   │   │   │   ├── sign_part
+│   │   │   │   │   └── route.js
+│   │   │   │   └── upload_parts
+│   │   │   │       └── [objectKey]
+│   │   │   │           └── [uploadId]
+│   │   │   │               └── route.js
+│   │   │   └── signed-url
+│   │   │       └── route.js
+│   │   ├── tournament
+│   │   │   ├── comments
+│   │   │   │   ├── create
+│   │   │   │   │   └── route.js
+│   │   │   │   ├── delete
+│   │   │   │   │   └── route.js
+│   │   │   │   ├── get
+│   │   │   │   │   └── route.js
+│   │   │   │   └── react
+│   │   │   │       └── route.js
+│   │   │   ├── create
+│   │   │   │   └── route.js
+│   │   │   ├── create-product
+│   │   │   │   └── route.js
+│   │   │   ├── details
+│   │   │   │   └── route.js
+│   │   │   ├── edit
+│   │   │   │   └── route.js
+│   │   │   ├── getall
+│   │   │   │   └── route.js
+│   │   │   ├── get-products
+│   │   │   │   └── route.js
+│   │   │   ├── getshowcase
+│   │   │   │   └── route.js
+│   │   │   ├── get-tournaments
+│   │   │   │   └── route.js
+│   │   │   ├── join
+│   │   │   │   └── route.js
+│   │   │   ├── leave
+│   │   │   │   └── route.js
+│   │   │   ├── remove
+│   │   │   │   └── route.js
+│   │   │   ├── shuffle
+│   │   │   │   └── route.js
+│   │   │   ├── signed-url
+│   │   │   │   └── route.js
+│   │   │   ├── start
+│   │   │   │   └── route.js
+│   │   │   └── [tournamentId]
+│   │   │       ├── bracket
+│   │   │       │   └── route.js
+│   │   │       └── delete
+│   │   │           └── route.js
+│   │   ├── user
+│   │   │   ├── current-workspace
+│   │   │   │   └── route.js
+│   │   │   ├── route.js
+│   │   │   ├── session
+│   │   │   │   └── route.js
+│   │   │   ├── transactions
+│   │   │   │   └── route.js
+│   │   │   └── wallet
+│   │   │       └── route.js
+│   │   ├── [username]
+│   │   │   ├── members
+│   │   │   │   └── route.js
+│   │   │   ├── route.js
+│   │   │   └── tournaments
+│   │   │       └── route.js
+│   │   ├── users
+│   │   │   └── route.js
+│   │   └── workspace
+│   │       ├── invite
+│   │       │   ├── route.js
+│   │       │   └── search
+│   │       │       └── route.js
+│   │       ├── members
+│   │       │   ├── role
+│   │       │   │   └── route.js
+│   │       │   └── route.js
+│   │       └── route.js
+│   ├── blog
+│   │   ├── all-posts
+│   │   │   ├── page.jsx
+│   │   │   └── [slug]
+│   │   │       └── page.jsx
+│   │   ├── client.jsx
+│   │   ├── page.jsx
+│   │   └── [slug]
+│   │       └── page.jsx
+│   ├── cards
+│   │   └── page.jsx
+│   ├── create2
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── bracket
+│   │   │   │   ├── client2.jsx
+│   │   │   │   ├── clientbb.jsx
+│   │   │   │   ├── client copy.jsx
+│   │   │   │   └── client.jsx
+│   │   │   ├── create-post-forms
+│   │   │   │   ├── forms
+│   │   │   │   │   ├── facebook
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── instagram
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── add-emojis-button.jsx
+│   │   │   │   │   │   ├── add-media-button.jsx
+│   │   │   │   │   │   ├── add-text-with-colored-background.jsx
+│   │   │   │   │   │   ├── media-modal.jsx
+│   │   │   │   │   │   ├── media-preview-grid.jsx
+│   │   │   │   │   │   ├── scheduling-options-button.jsx
+│   │   │   │   │   │   └── text-with-colored-background-form.jsx
+│   │   │   │   │   ├── tiktok
+│   │   │   │   │   │   ├── image.jsx
+│   │   │   │   │   │   └── video.jsx
+│   │   │   │   │   └── youtube
+│   │   │   │   │       ├── short.jsx
+│   │   │   │   │       └── video.jsx
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── tabs
+│   │   │   │       ├── index22.jsx
+│   │   │   │       ├── index copy.jsx
+│   │   │   │       ├── index.jsx
+│   │   │   │       └── platforms-icons
+│   │   │   │           ├── facebook-icon.jsx
+│   │   │   │           ├── instagram-icon.jsx
+│   │   │   │           ├── tiktok-icon.jsx
+│   │   │   │           └── youtube-icon.jsx
+│   │   │   └── preview-card
+│   │   │       └── index.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── create2b
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── bracket
+│   │   │   │   ├── client2.jsx
+│   │   │   │   ├── clientbb.jsx
+│   │   │   │   ├── client copy.jsx
+│   │   │   │   └── client.jsx
+│   │   │   ├── create-post-forms
+│   │   │   │   ├── forms
+│   │   │   │   │   ├── facebook
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── instagram
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── add-emojis-button.jsx
+│   │   │   │   │   │   ├── add-media-button.jsx
+│   │   │   │   │   │   ├── add-text-with-colored-background.jsx
+│   │   │   │   │   │   ├── media-modal.jsx
+│   │   │   │   │   │   ├── media-preview-grid.jsx
+│   │   │   │   │   │   ├── scheduling-options-button.jsx
+│   │   │   │   │   │   └── text-with-colored-background-form.jsx
+│   │   │   │   │   ├── tiktok
+│   │   │   │   │   │   ├── image.jsx
+│   │   │   │   │   │   └── video.jsx
+│   │   │   │   │   └── youtube
+│   │   │   │   │       ├── short.jsx
+│   │   │   │   │       └── video.jsx
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── tabs
+│   │   │   │       ├── index22.jsx
+│   │   │   │       ├── index copy.jsx
+│   │   │   │       ├── index.jsx
+│   │   │   │       └── platforms-icons
+│   │   │   │           ├── facebook-icon.jsx
+│   │   │   │           ├── instagram-icon.jsx
+│   │   │   │           ├── tiktok-icon.jsx
+│   │   │   │           └── youtube-icon.jsx
+│   │   │   └── preview-card
+│   │   │       └── index.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── create3
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── bracket
+│   │   │   │   ├── client2b.jsx
+│   │   │   │   ├── client copy.jsx
+│   │   │   │   └── client.jsx
+│   │   │   ├── create-post-forms
+│   │   │   │   ├── forms
+│   │   │   │   │   ├── facebook
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── instagram
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── add-emojis-button.jsx
+│   │   │   │   │   │   ├── add-media-button.jsx
+│   │   │   │   │   │   ├── add-text-with-colored-background.jsx
+│   │   │   │   │   │   ├── media-modal.jsx
+│   │   │   │   │   │   ├── media-preview-grid.jsx
+│   │   │   │   │   │   ├── scheduling-options-button.jsx
+│   │   │   │   │   │   └── text-with-colored-background-form.jsx
+│   │   │   │   │   ├── tiktok
+│   │   │   │   │   │   ├── image.jsx
+│   │   │   │   │   │   └── video.jsx
+│   │   │   │   │   └── youtube
+│   │   │   │   │       ├── short.jsx
+│   │   │   │   │       └── video.jsx
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── tabs
+│   │   │   │       ├── index22.jsx
+│   │   │   │       ├── index copy.jsx
+│   │   │   │       ├── index.jsx
+│   │   │   │       └── platforms-icons
+│   │   │   │           ├── facebook-icon.jsx
+│   │   │   │           ├── instagram-icon.jsx
+│   │   │   │           ├── tiktok-icon.jsx
+│   │   │   │           └── youtube-icon.jsx
+│   │   │   └── preview-card
+│   │   │       └── index.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── create3b
+│   │   ├── client copy 2.jsx
+│   │   ├── client copy 3.jsx
+│   │   ├── client copy.jsx
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── create-post-forms
+│   │   │   │   ├── forms
+│   │   │   │   │   ├── facebook
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── instagram
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── add-emojis-button.jsx
+│   │   │   │   │   │   ├── add-media-button.jsx
+│   │   │   │   │   │   ├── add-text-with-colored-background.jsx
+│   │   │   │   │   │   ├── media-modal.jsx
+│   │   │   │   │   │   ├── media-preview-grid.jsx
+│   │   │   │   │   │   ├── scheduling-options-button.jsx
+│   │   │   │   │   │   └── text-with-colored-background-form.jsx
+│   │   │   │   │   ├── tiktok
+│   │   │   │   │   │   ├── image.jsx
+│   │   │   │   │   │   └── video.jsx
+│   │   │   │   │   └── youtube
+│   │   │   │   │       ├── short.jsx
+│   │   │   │   │       └── video.jsx
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── tabs
+│   │   │   │       ├── index22.jsx
+│   │   │   │       ├── index copy.jsx
+│   │   │   │       ├── index.jsx
+│   │   │   │       └── platforms-icons
+│   │   │   │           ├── facebook-icon.jsx
+│   │   │   │           ├── instagram-icon.jsx
+│   │   │   │           ├── tiktok-icon.jsx
+│   │   │   │           └── youtube-icon.jsx
+│   │   │   └── preview-card
+│   │   │       └── index.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── create4
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── bracket
+│   │   │   │   ├── client2.jsx
+│   │   │   │   ├── client3.jsx
+│   │   │   │   ├── client copy.jsx
+│   │   │   │   └── client.jsx
+│   │   │   ├── create-post-forms
+│   │   │   │   ├── forms
+│   │   │   │   │   ├── facebook
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── instagram
+│   │   │   │   │   │   ├── post.jsx
+│   │   │   │   │   │   ├── reel.jsx
+│   │   │   │   │   │   └── story.jsx
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── add-emojis-button.jsx
+│   │   │   │   │   │   ├── add-media-button.jsx
+│   │   │   │   │   │   ├── add-text-with-colored-background.jsx
+│   │   │   │   │   │   ├── media-modal.jsx
+│   │   │   │   │   │   ├── media-preview-grid.jsx
+│   │   │   │   │   │   ├── scheduling-options-button.jsx
+│   │   │   │   │   │   └── text-with-colored-background-form.jsx
+│   │   │   │   │   ├── tiktok
+│   │   │   │   │   │   ├── image.jsx
+│   │   │   │   │   │   └── video.jsx
+│   │   │   │   │   └── youtube
+│   │   │   │   │       ├── short.jsx
+│   │   │   │   │       └── video.jsx
+│   │   │   │   ├── index.jsx
+│   │   │   │   └── tabs
+│   │   │   │       ├── index22.jsx
+│   │   │   │       ├── index copy.jsx
+│   │   │   │       ├── index.jsx
+│   │   │   │       └── platforms-icons
+│   │   │   │           ├── facebook-icon.jsx
+│   │   │   │           ├── instagram-icon.jsx
+│   │   │   │           ├── tiktok-icon.jsx
+│   │   │   │           └── youtube-icon.jsx
+│   │   │   └── preview-card
+│   │   │       └── index.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── error.js
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── google-analytics.jsx
+│   ├── kadi
+│   │   ├── cards
+│   │   │   ├── client.jsx
+│   │   │   └── page.jsx
+│   │   ├── glossary
+│   │   │   ├── client.jsx
+│   │   │   └── page.jsx
+│   │   ├── how-to-play
+│   │   │   ├── client.jsx
+│   │   │   └── page.jsx
+│   │   ├── play
+│   │   │   └── [slug]
+│   │   │       ├── client.jsx
+│   │   │       ├── layout.jsx
+│   │   │       └── page.jsx
+│   │   ├── replay
+│   │   │   └── [slug]
+│   │   │       ├── client.jsx
+│   │   │       ├── layout.jsx
+│   │   │       └── page.jsx
+│   │   ├── rules
+│   │   │   ├── client.jsx
+│   │   │   └── page.jsx
+│   │   ├── sequences
+│   │   │   ├── client.jsx
+│   │   │   └── page.jsx
+│   │   ├── [slug]
+│   │   │   ├── client.jsx
+│   │   │   ├── layout.jsx
+│   │   │   └── page.jsx
+│   │   └── strategies
+│   │       ├── client.jsx
+│   │       └── page.jsx
+│   ├── layout.jsx
+│   ├── lobby
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   ├── page.jsx
+│   │   └── styles.css
+│   ├── login
+│   │   └── page.jsx
+│   ├── manifest.js
+│   ├── matches
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── microsoft-clarity.jsx
+│   ├── notifications
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── onboarding
+│   │   ├── discover
+│   │   │   ├── client.jsx
+│   │   │   ├── client_old.jsx
+│   │   │   └── page.jsx
+│   │   └── layout.jsx
+│   ├── opengraph-image.png
+│   ├── page.jsx
+│   ├── plans
+│   │   ├── client.jsx
+│   │   └── page.jsx
+│   ├── privacy-policy
+│   │   └── page.jsx
+│   ├── push
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── settings
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── tab-items
+│   │   │   │   ├── account-settings
+│   │   │   │   │   ├── controls.jsx
+│   │   │   │   │   ├── invites.jsx
+│   │   │   │   │   ├── notifications.jsx
+│   │   │   │   │   └── overview.jsx
+│   │   │   │   └── workspace-settings
+│   │   │   │       ├── about-workspaces.jsx
+│   │   │   │       ├── controls.jsx
+│   │   │   │       ├── invite-users-to-workspace.jsx
+│   │   │   │       ├── permissions-info.jsx
+│   │   │   │       └── team-management
+│   │   │   │           ├── index.jsx
+│   │   │   │           └── uninvite-modal.jsx
+│   │   │   └── tab-navigation.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── store
+│   │   ├── authSlice.js
+│   │   ├── create-posts-forms
+│   │   │   ├── content-slice.js
+│   │   │   └── ui-slice.js
+│   │   ├── index.js
+│   │   ├── notificationSlice.js
+│   │   ├── pageSlice.js
+│   │   ├── postSlice.js
+│   │   └── StoreProvider.js
+│   ├── terms-of-service
+│   │   └── page.jsx
+│   ├── transactions
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── twitter-image.png
+│   ├── uppy
+│   │   ├── placeholder
+│   │   └── upload
+│   │       └── page.jsx
+│   ├── [username]
+│   │   ├── client.jsx
+│   │   ├── components
+│   │   │   ├── edit-profile-modal.jsx
+│   │   │   ├── members-list.jsx
+│   │   │   ├── profile
+│   │   │   │   ├── loading-skeletons.jsx
+│   │   │   │   ├── members-tab.jsx
+│   │   │   │   ├── profile-header.jsx
+│   │   │   │   ├── profile-socials.jsx
+│   │   │   │   ├── profile-tabs.jsx
+│   │   │   │   └── tournaments-tab.jsx
+│   │   │   ├── profile-tabs
+│   │   │   └── social-media-icons.jsx
+│   │   ├── layout.jsx
+│   │   ├── loading.jsx
+│   │   ├── page.jsx
+│   │   └── [tournamentName]
+│   │       └── page.jsx
+│   ├── wallet
+│   │   ├── client.jsx
+│   │   ├── layout.jsx
+│   │   └── page.jsx
+│   ├── welcome
+│   │   ├── layout.jsx
+│   │   └── mic_cheque_podcast
+│   │       ├── card.jsx
+│   │       ├── client.jsx
+│   │       ├── line-chart.jsx
+│   │       └── page.jsx
+│   └── workspace
+│       ├── create
+│       │   ├── client.jsx
+│       │   ├── layout.jsx
+│       │   └── page.jsx
+│       ├── invite
+│       │   ├── client.jsx
+│       │   ├── layout.jsx
+│       │   └── page.jsx
+│       ├── respond-to-an-invite
+│       │   └── [inviteId]
+│       │       ├── client.jsx
+│       │       ├── layout.jsx
+│       │       └── page.jsx
+│       └── settings
+│           ├── client.jsx
+│           ├── layout.jsx
+│           └── page.jsx
+├── certificates
+│   ├── localhost-key.pem
+│   └── localhost.pem
+├── components
+│   ├── Auth
+│   │   ├── Authenticate2.jsx
+│   │   ├── Authenticate3.jsx
+│   │   ├── Authenticate.jsx
+│   │   ├── Buttons.jsx
+│   │   └── ProtectedAppLayout.jsx
+│   ├── Auth.jsx
+│   ├── Code.jsx
+│   ├── Comment
+│   │   ├── GiveawayCommentList.jsx
+│   │   └── GiveawayCommentor.jsx
+│   ├── CreateWorkspaceModal.jsx
+│   ├── EmojiPicker.jsx
+│   ├── ErrorBoundary.js
+│   ├── Footer.jsx
+│   ├── Giveaways
+│   │   ├── Copy.jsx
+│   │   ├── EntryHeader.jsx
+│   │   ├── EntryModel.jsx
+│   │   └── EntryTabs.jsx
+│   ├── hooks
+│   │   └── use-toast.js
+│   ├── icons
+│   │   └── index.jsx
+│   ├── LandingPage
+│   │   ├── CardGamesShowcase.jsx
+│   │   ├── CTA.jsx
+│   │   ├── Features.jsx
+│   │   ├── GameCard.jsx
+│   │   ├── OnboardingStatus.jsx
+│   │   ├── SocialIntegrations.jsx
+│   │   ├── TournamentCard.jsx
+│   │   ├── TournamentShowcase.jsx
+│   │   └── UserValue.jsx
+│   ├── Loader
+│   │   ├── KadiLoader.jsx
+│   │   ├── MiniLoader.jsx
+│   │   └── PageLoader.jsx
+│   ├── Loader.jsx
+│   ├── LobbyEmojiPicker.jsx
+│   ├── MQTTNotifications.jsx
+│   ├── Navbar.jsx
+│   ├── Navigation
+│   │   ├── BlogPageHeader.jsx
+│   │   ├── BottomNavigation.jsx
+│   │   ├── CommunityLeftSidebar.jsx
+│   │   ├── CommunityLeftSidebar_old.jsx
+│   │   ├── GiveawaysHeader.jsx
+│   │   ├── LandingPageHeader.jsx
+│   │   ├── LeftSideBar.jsx
+│   │   ├── Logo.jsx
+│   │   ├── LogoutButton.jsx
+│   │   ├── MainNavbar.jsx
+│   │   ├── MainNavbar_old.jsx
+│   │   ├── NotificationsMenu.jsx
+│   │   └── OnboardingPageHeader.jsx
+│   ├── NextLogo.jsx
+│   ├── Notification.jsx
+│   ├── Notifications
+│   │   ├── DepositNotificationCard.jsx
+│   │   ├── TournamentNotificationCard.jsx
+│   │   └── WorkspaceNotificatonCard.jsx
+│   ├── Onboarding
+│   │   ├── SuccessOnboardingModal.jsx
+│   │   └── SuccessOnboardingModal_old.jsx
+│   ├── PushNotifications.jsx
+│   ├── PWAStatusChecker.jsx
+│   ├── RPS
+│   │   ├── CompButtons.jsx
+│   │   ├── PlayButtons.jsx
+│   │   ├── PlayButtonsP2P.jsx
+│   │   ├── Restart.jsx
+│   │   ├── RestartP2P.jsx
+│   │   └── Scores.jsx
+│   ├── Shared
+│   │   ├── ConfirmAction.jsx
+│   │   └── ConfirmDeletion.jsx
+│   ├── Step.jsx
+│   ├── ui
+│   │   ├── accordion.jsx
+│   │   ├── alert-dialog.jsx
+│   │   ├── alert.jsx
+│   │   ├── avatar.jsx
+│   │   ├── badge.jsx
+│   │   ├── button.jsx
+│   │   ├── calendar.jsx
+│   │   ├── card.jsx
+│   │   ├── carousel.jsx
+│   │   ├── chart.jsx
+│   │   ├── checkbox.jsx
+│   │   ├── collapsible.jsx
+│   │   ├── dialog.jsx
+│   │   ├── dropdown-menu.jsx
+│   │   ├── form.jsx
+│   │   ├── hover-card.jsx
+│   │   ├── input.jsx
+│   │   ├── label.jsx
+│   │   ├── popover.jsx
+│   │   ├── progress.jsx
+│   │   ├── radio-group.jsx
+│   │   ├── scroll-area.jsx
+│   │   ├── select.jsx
+│   │   ├── separator.jsx
+│   │   ├── sheet.jsx
+│   │   ├── skeleton.jsx
+│   │   ├── slider.jsx
+│   │   ├── switch.jsx
+│   │   ├── table.jsx
+│   │   ├── tabs.jsx
+│   │   ├── textarea.jsx
+│   │   ├── toaster.jsx
+│   │   ├── toast.jsx
+│   │   └── tooltip.jsx
+│   └── UploadSection.jsx
+├── components.json
+├── contentlayer.config.js
+├── env.example
+├── favicon.ico
+├── hooks
+│   ├── useGame.js
+│   ├── useIsMobile.js
+│   ├── useKadiAISocket.js
+│   ├── useKadiSocket.js
+│   ├── useLobbySocket.js
+│   ├── useMatchesSocket.js
+│   └── usePayments.js
+├── jsconfig.json
+├── lib
+│   ├── ai
+│   │   └── engine
+│   │       ├── decision
+│   │       │   ├── DecisionCoordinator.js
+│   │       │   ├── MoveGenerator.js
+│   │       │   ├── PersonalityModule.js
+│   │       │   └── StrategySelector.js
+│   │       └── state
+│   │           ├── CardTracker.js
+│   │           ├── GameStateAnalyzer.js
+│   │           ├── HandEvaluator.js
+│   │           └── index.js
+│   ├── cards
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── database.js
+│   ├── env
+│   │   └── get-environment-specific-env-variable.js
+│   ├── fetch.js
+│   ├── giveaways
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── media
+│   │   ├── hooks.js
+│   │   ├── index.js
+│   │   ├── use-s3-multi-upload.js
+│   │   ├── use-s3-upload.js
+│   │   └── use-uppy-s3-upload.js
+│   ├── notifications
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── rps
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── theme
+│   │   └── useThemeSwitcher.js
+│   ├── tournament
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── user
+│   │   ├── hooks.js
+│   │   └── index.js
+│   ├── utils.js
+│   └── workspace
+│       ├── hooks.js
+│       └── index.js
+├── middleware.js
+├── models
+│   ├── cardsroom.model.js
+│   ├── chat.model.js
+│   ├── comment.model.js
+│   ├── entry.model.js
+│   ├── games
+│   │   ├── kadiplayer.model.js
+│   │   ├── product
+│   │   │   ├── index.model.js
+│   │   │   └── ownership-history.model.js
+│   │   ├── tournament
+│   │   │   ├── index.model.js
+│   │   │   ├── match.model.js
+│   │   │   └── participant.model.js
+│   │   └── tournament.model.js
+│   ├── giveaway.model.js
+│   ├── image.model.js
+│   ├── invite.model.js
+│   ├── kadiplayer.model.js
+│   ├── notification.model.js
+│   ├── payments
+│   │   ├── payment-details.model.js
+│   │   ├── paystack-transfer-recipient.model.js
+│   │   ├── plan.model.js
+│   │   ├── sponsorship.model.js
+│   │   ├── subscription.model.js
+│   │   ├── transaction.model.js
+│   │   └── wallet.model.js
+│   ├── product.model.js
+│   ├── push-subscription.model.js
+│   ├── rpsroom.model.js
+│   ├── tag.model.js
+│   ├── tournament-comment.model.js
+│   ├── tournament.model.js
+│   ├── user
+│   │   ├── index.model.js
+│   │   ├── individual-user.schema.js
+│   │   └── workspace-user.schema.js
+│   ├── video.model.js
+│   ├── vote.model.js
+│   └── workspace.model.js
+├── next.config.mjs
+├── next-sitemap.config.js
+├── package.json
+├── page_components
+│   ├── Blog
+│   │   ├── AllPosts.jsx
+│   │   ├── BlogDetails.jsx
+│   │   ├── BlogLayout1.jsx
+│   │   ├── BlogLayout2.jsx
+│   │   ├── BlogLayout3.jsx
+│   │   ├── Home
+│   │   │   ├── EditorPick.jsx
+│   │   │   └── LatestPosts.jsx
+│   │   ├── HomeHeader.jsx
+│   │   ├── RenderMdx.jsx
+│   │   └── Tag.jsx
+│   ├── Cards
+│   │   ├── AcceptJump.jsx
+│   │   ├── AcceptKickback.jsx
+│   │   ├── CenterTable.jsx
+│   │   ├── ChatContainer.jsx
+│   │   ├── CheckIn.jsx
+│   │   ├── CreateRoomModal.jsx
+│   │   ├── CurrentGameSuit.jsx
+│   │   ├── DefaultTable.jsx
+│   │   ├── DeleteRoomModal.jsx
+│   │   ├── demoAnimation.js
+│   │   ├── demoGameAnimation.js
+│   │   ├── EmojisModal.jsx
+│   │   ├── gameAnimation.js
+│   │   ├── GameDirection.jsx
+│   │   ├── GameOverModalDemo.jsx
+│   │   ├── GameOverModal.jsx
+│   │   ├── JoiningPlayer.jsx
+│   │   ├── KadiGameRoomLoader.jsx
+│   │   ├── KadiInfoModal.jsx
+│   │   ├── LobbyChatContainer.jsx
+│   │   ├── NetworkStatus.jsx
+│   │   ├── PassTurn.jsx
+│   │   ├── PickPointer.jsx
+│   │   ├── PlayerDeck1.jsx
+│   │   ├── PlayerDeck.jsx
+│   │   ├── PlayPanel.jsx
+│   │   ├── replayAnimation.js
+│   │   ├── SuitModal.jsx
+│   │   ├── WaitingPlayer.jsx
+│   │   └── watcherAnimation.js
+│   ├── Integrations
+│   │   ├── Benefits.jsx
+│   │   ├── CrossPost.jsx
+│   │   ├── FAQ.jsx
+│   │   ├── Hero.jsx
+│   │   ├── IntegrationCTA.jsx
+│   │   ├── OtherIntegrations.jsx
+│   │   └── SocialProof.jsx
+│   ├── Lobby
+│   │   └── LobbyLoader.jsx
+│   ├── Matches
+│   │   └── MatchCard.jsx
+│   ├── Pricing
+│   │   └── PricingTable.jsx
+│   ├── Settings
+│   │   ├── SocialIntegrations.jsx
+│   │   └── WorkspaceSettings.jsx
+│   ├── Shared
+│   │   └── Layout
+│   │       ├── AppLayout.jsx
+│   │       ├── CommunityLayout.jsx
+│   │       ├── CommunityLayout_old.jsx
+│   │       └── GameLayout.jsx
+│   ├── Tournament
+│   │   ├── Comments.jsx
+│   │   ├── CreateTournamentModal.jsx
+│   │   ├── CustomMatchBracket.jsx
+│   │   ├── Games.jsx
+│   │   ├── Overview.jsx
+│   │   ├── Participation.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ProductImageUpload.jsx
+│   │   ├── Settings.jsx
+│   │   ├── Sponsorship.jsx
+│   │   ├── TournamentCard.jsx
+│   │   └── UserTournament.jsx
+│   └── UserProfile
+│       ├── PublicTournaments.jsx
+│       └── TournamentCard.jsx
+├── postcss.config.js
+├── project-structure.txt
+├── public
+│   ├── ac1.png
+│   ├── ac2.png
+│   ├── ac3.png
+│   ├── ac4.png
+│   ├── ac5.png
+│   ├── ac6.png
+│   ├── agencyplan.png
+│   ├── analytics.png
+│   ├── apple-touch-icon.png
+│   ├── banner.png
+│   ├── banner.webp
+│   ├── batch.png
+│   ├── blog
+│   │   ├── giveawayanatomy0.png
+│   │   ├── giveawaybasics0.png
+│   │   ├── giveawayboost0.png
+│   │   ├── giveawaybrandamplify0.png
+│   │   ├── giveawaybrandbuzz0.png
+│   │   ├── giveawaychancedecision0.png
+│   │   ├── giveawayengagement0.png
+│   │   ├── giveawaygoldmine0.png
+│   │   ├── giveawayleads0.png
+│   │   ├── giveawayloyalty0.png
+│   │   ├── giveawaymastery0.png
+│   │   ├── giveawaymeasure0.png
+│   │   ├── giveawaymistakes0.png
+│   │   ├── giveawayodds0.png
+│   │   ├── giveawayplatform0.png
+│   │   ├── giveawayprizes0.png
+│   │   ├── giveawaypromo0.png
+│   │   ├── giveawaysemaillist0.png
+│   │   ├── giveawaysocialmedia0.png
+│   │   ├── giveawaysshine0.png
+│   │   ├── giveawaytips0.png
+│   │   ├── instagramshowcase0.png
+│   │   ├── kadi0.png
+│   │   └── rockpaperscissors0.png
+│   ├── brandplan.png
+│   ├── businessplan.png
+│   ├── buttonloader.svg
+│   ├── buyin.png
+│   ├── cards
+│   │   ├── 10C.png
+│   │   ├── 10D.png
+│   │   ├── 10H.png
+│   │   ├── 10S.png
+│   │   ├── 2C.png
+│   │   ├── 2D.png
+│   │   ├── 2H.png
+│   │   ├── 2S.png
+│   │   ├── 3C.png
+│   │   ├── 3D.png
+│   │   ├── 3H.png
+│   │   ├── 3S.png
+│   │   ├── 4C.png
+│   │   ├── 4D.png
+│   │   ├── 4H.png
+│   │   ├── 4S.png
+│   │   ├── 5C.png
+│   │   ├── 5D.png
+│   │   ├── 5H.png
+│   │   ├── 5S.png
+│   │   ├── 6C.png
+│   │   ├── 6D.png
+│   │   ├── 6H.png
+│   │   ├── 6S.png
+│   │   ├── 7C.png
+│   │   ├── 7D.png
+│   │   ├── 7H.png
+│   │   ├── 7S.png
+│   │   ├── 8C.png
+│   │   ├── 8D.png
+│   │   ├── 8H.png
+│   │   ├── 8S.png
+│   │   ├── 9C.png
+│   │   ├── 9D.png
+│   │   ├── 9H.png
+│   │   ├── 9S.png
+│   │   ├── AC.png
+│   │   ├── AD.png
+│   │   ├── AH.png
+│   │   ├── arrowback.png
+│   │   ├── arrowforward.png
+│   │   ├── AS.png
+│   │   ├── audio
+│   │   │   ├── cardPlace1.wav
+│   │   │   ├── cardPlace2.wav
+│   │   │   ├── cardPlace3.wav
+│   │   │   ├── cardPlace4.wav
+│   │   │   ├── cardTakeOutPackage1.wav
+│   │   │   ├── cuckoo.wav
+│   │   │   ├── draw.wav
+│   │   │   ├── error.wav
+│   │   │   ├── shuffle.wav
+│   │   │   └── tap.wav
+│   │   ├── backblue.png
+│   │   ├── backgreen.png
+│   │   ├── background_1.png
+│   │   ├── backred.png
+│   │   ├── bubble.webp
+│   │   ├── chatbubble_1.png
+│   │   ├── chatbubble.png
+│   │   ├── club.png
+│   │   ├── diamond.png
+│   │   ├── dnd.jpg
+│   │   ├── emojis
+│   │   │   ├── emoji10.webp
+│   │   │   ├── emoji11.webp
+│   │   │   ├── emoji12.webp
+│   │   │   ├── emoji13.webp
+│   │   │   ├── emoji14.webp
+│   │   │   ├── emoji15.webp
+│   │   │   ├── emoji16.webp
+│   │   │   ├── emoji17.webp
+│   │   │   ├── emoji18.webp
+│   │   │   ├── emoji19.webp
+│   │   │   ├── emoji1.webp
+│   │   │   ├── emoji20.webp
+│   │   │   ├── emoji21.webp
+│   │   │   ├── emoji22.webp
+│   │   │   ├── emoji23.webp
+│   │   │   ├── emoji24.webp
+│   │   │   ├── emoji25.webp
+│   │   │   ├── emoji26.webp
+│   │   │   ├── emoji27.webp
+│   │   │   ├── emoji28.webp
+│   │   │   ├── emoji2.webp
+│   │   │   ├── emoji3.webp
+│   │   │   ├── emoji4.webp
+│   │   │   ├── emoji5.webp
+│   │   │   ├── emoji6.webp
+│   │   │   ├── emoji7.webp
+│   │   │   ├── emoji8.webp
+│   │   │   └── emoji9.webp
+│   │   ├── heart.png
+│   │   ├── JC.png
+│   │   ├── JD.png
+│   │   ├── JH.png
+│   │   ├── JOK1.png
+│   │   ├── JOK2.png
+│   │   ├── JOK.png
+│   │   ├── JS.png
+│   │   ├── KC.png
+│   │   ├── KD.png
+│   │   ├── KH.png
+│   │   ├── KS.png
+│   │   ├── pickcard.png
+│   │   ├── prize.png
+│   │   ├── QC.png
+│   │   ├── QD.png
+│   │   ├── QH.png
+│   │   ├── QS.png
+│   │   ├── reactimage_1.png
+│   │   ├── reactimage.png
+│   │   ├── reactionbubble.png
+│   │   ├── rightpointer.png
+│   │   └── spade.png
+│   ├── chatbubble.png
+│   ├── checkbox.png
+│   ├── community.png
+│   ├── creatorplan.png
+│   ├── default_profile.png
+│   ├── deposit.png
+│   ├── disconnected.png
+│   ├── engagement.png
+│   ├── facebook.png
+│   ├── facebook.svg
+│   ├── favicon-16x16.png
+│   ├── favicon.ico
+│   ├── fbback.png
+│   ├── fbcamera.png
+│   ├── fbclapreaction.png
+│   ├── fbcomment1.png
+│   ├── fbcomment2.png
+│   ├── fbcomment3.png
+│   ├── fbcomment4.png
+│   ├── fbcomment5.png
+│   ├── fbcomment6.png
+│   ├── fbcommentblack.png
+│   ├── fbcomment.png
+│   ├── fbintegrationbanner.png
+│   ├── fblike1.png
+│   ├── fblikeblack.png
+│   ├── fblike.png
+│   ├── fblikereaction.png
+│   ├── fblogo.png
+│   ├── fblovereaction.png
+│   ├── fbmore1.png
+│   ├── fbmore2.png
+│   ├── fbmoreblack.png
+│   ├── fbmore.png
+│   ├── fbprofile.png
+│   ├── fbreellogo.png
+│   ├── fbreellogo.webp
+│   ├── fbsearch.png
+│   ├── fbshare1.png
+│   ├── fbshareblack.png
+│   ├── fbstorycancel.png
+│   ├── fbstoryemoji.png
+│   ├── fbstoryheart.png
+│   ├── fbstorylike1.png
+│   ├── fbstorylike.png
+│   ├── fbstorymessenger.png
+│   ├── fbstorymore.png
+│   ├── fbstorysend.png
+│   ├── fbstorythumbsup.png
+│   ├── fbwhatsapp1.png
+│   ├── fbworld.png
+│   ├── freeplan.png
+│   ├── googlebtn.png
+│   ├── google-logo
+│   │   └── logo-with-no-background.svg
+│   ├── googlelogo.svg
+│   ├── google.svg
+│   ├── hi.gif
+│   ├── igcamera.png
+│   ├── igcomment.png
+│   ├── igintegrationbanner.png
+│   ├── iglikeblack.png
+│   ├── iglike.png
+│   ├── igmore1.png
+│   ├── igmore.png
+│   ├── igmusic.png
+│   ├── igsaveblack.png
+│   ├── igsave.png
+│   ├── igsendblack.png
+│   ├── igsend.png
+│   ├── igsound.png
+│   ├── igverified.png
+│   ├── instagram.png
+│   ├── instagram.svg
+│   ├── JOK.png
+│   ├── kadi0.png
+│   ├── kadilogo.png
+│   ├── king.png
+│   ├── landing1.png
+│   ├── landing2.jpg
+│   ├── landing3.png
+│   ├── landing4.png
+│   ├── linkedin.png
+│   ├── linkedin.svg
+│   ├── loader.svg
+│   ├── new.png
+│   ├── next.svg
+│   ├── other.png
+│   ├── partner1.svg
+│   ├── partner2.svg
+│   ├── patner3.png
+│   ├── people.png
+│   ├── person1.jpg
+│   ├── person2.jpg
+│   ├── person3.jpg
+│   ├── photo.png
+│   ├── player1.png
+│   ├── player2.png
+│   ├── play.png
+│   ├── pot.png
+│   ├── professionalplan.png
+│   ├── publishing.png
+│   ├── quote.png
+│   ├── referral.png
+│   ├── retention.png
+│   ├── robots.txt
+│   ├── rps_assets
+│   │   ├── paper.png
+│   │   ├── rock.png
+│   │   ├── scissors.png
+│   │   └── trophy.png
+│   ├── scheduling.png
+│   ├── sitemap-0.xml
+│   ├── sitemap.xml
+│   ├── socialcomp.mp4
+│   ├── stars.png
+│   ├── subscribers.png
+│   ├── sw.js
+│   ├── thirteen.svg
+│   ├── tickets.png
+│   ├── tiktokcamera.png
+│   ├── tiktokcomment.png
+│   ├── tiktokfollow.png
+│   ├── tiktoklike.png
+│   ├── tiktok.png
+│   ├── tiktoksave.png
+│   ├── tiktokshare.png
+│   ├── tiktok.svg
+│   ├── transactions.png
+│   ├── ttintegrationbanner.png
+│   ├── twitter.png
+│   ├── twitter.svg
+│   ├── vercel.svg
+│   ├── video.png
+│   ├── views.png
+│   ├── wallet.png
+│   ├── watchtime.png
+│   ├── whatsapp.png
+│   ├── withdraw.png
+│   ├── wufwuf_bg.jpg
+│   ├── wufwufcreate.png
+│   ├── wufwuf-icon
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-96x96.png
+│   │   ├── favicon.ico
+│   │   ├── favicon.svg
+│   │   ├── site.webmanifest
+│   │   ├── web-app-manifest-192x192.png
+│   │   └── web-app-manifest-512x512.png
+│   ├── wufwuf-logo
+│   │   ├── black.png
+│   │   └── white.png
+│   ├── wufwuf_logo_1.png
+│   ├── wufwuflogo1.png
+│   ├── wufwuf_logo.png
+│   ├── wufwuf_logo_white.png
+│   ├── wu_logo.png
+│   ├── x1.png
+│   ├── x.png
+│   ├── x.svg
+│   ├── youtube.png
+│   ├── youtube.svg
+│   ├── ytcomment.png
+│   ├── ytdislike.png
+│   ├── ytintegrationbanner.png
+│   ├── ytlike.png
+│   ├── ytmusic.png
+│   ├── ytremix.png
+│   ├── ytshare.png
+│   └── ytshortslogo.png
+├── README.md
+├── services
+│   ├── auth
+│   │   ├── create-user-session-cookie-string.js
+│   │   ├── get-user-session.js
+│   │   └── google
+│   │       ├── exchange-code-for-tokens-and-get-user-info.js
+│   │       └── upsert-user-into-mongodb.js
+│   ├── cards
+│   │   ├── aggregations.js
+│   │   ├── aiAggregations.js
+│   │   ├── aiGameActions.js
+│   │   ├── gameActions.js
+│   │   ├── timedGameActions.js
+│   │   └── utils.js
+│   ├── database.js
+│   ├── event-bridge
+│   │   └── put-events-to-event-bridge.js
+│   ├── media
+│   │   └── delete
+│   │       ├── delete-media-from-database-and-s3.js
+│   │       ├── delete-s3-objects-tagged-for-deletion.js
+│   │       ├── delete-schedule-to-delete-media.js
+│   │       └── schedule-media-for-deletion.js
+│   ├── notification
+│   │   ├── aggregate-notificaton-data-to-send-to-client.js
+│   │   ├── create-notification-document-and-publish-it-to-iot-core-topic.js
+│   │   ├── get-notifications-to-display-by-user-id.js
+│   │   ├── notifications.js
+│   │   └── push
+│   │       ├── publish.js
+│   │       └── subscription.js
+│   ├── posts
+│   │   ├── get-image-or-video-object-ids.js
+│   │   ├── insert-post-into-mongodb.js
+│   │   └── loop-over-array-of-posts-and-insert-them-into-mongodb.js
+│   ├── socials
+│   │   └── youtube
+│   │       └── get-credentials.js
+│   ├── user
+│   │   ├── change-user-current-workspace.js
+│   │   ├── edit-user-profile-data.js
+│   │   ├── get-user-profile-data.js
+│   │   ├── get-user-profile-members.js
+│   │   └── get-user-tournaments.js
+│   └── workspace
+│       ├── change-workspace-member-role.js
+│       ├── create-a-workspace-document.js
+│       ├── get-a-populated-workspace-document.js
+│       ├── get-a-populated-workspace-invite-document.js
+│       ├── invite-user-to-a-workspace.js
+│       ├── leave-workspace.js
+│       ├── members
+│       │   ├── get-workspace-members-by-username.js
+│       │   └── remove
+│       │       └── remove-member-from-workspace.js
+│       ├── respond-to-an-invite.js
+│       ├── search-users-to-invite-to-a-workspace.js
+│       └── uninvite-user-from-workspace.js
+├── styles
+│   ├── analytics.module.css
+│   ├── cards.css
+│   ├── competitions.module.css
+│   ├── dashboard.module.css
+│   ├── edit.module.css
+│   ├── miniloader.module.css
+│   ├── navigation.module.css
+│   ├── onboarding.module.css
+│   ├── pricing.css
+│   ├── rps.module.css
+│   └── tournament.css
+├── tailwind.config.js
+├── utils
+│   ├── analytics
+│   │   ├── facebook
+│   │   │   └── index.js
+│   │   └── index.js
+│   ├── auth
+│   │   ├── check-user-session.js
+│   │   ├── getUser.js
+│   │   └── middleware.js
+│   ├── aws
+│   │   └── step-functions
+│   │       └── start-sync-execution.js
+│   ├── blog
+│   │   └── index.js
+│   ├── cards.js
+│   ├── media
+│   │   └── index.js
+│   ├── onboarding.js
+│   ├── placeholder
+│   ├── ranking.js
+│   ├── rps.js
+│   ├── styling
+│   │   └── index.js
+│   └── tournaments.js
+├── vercel.json
+└── yarn.lock
+
+331 directories, 1074 files

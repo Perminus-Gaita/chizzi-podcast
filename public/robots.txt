@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.wufwuf.io
+
+# Sitemaps
+Sitemap: https://www.wufwuf.io/sitemap.xml

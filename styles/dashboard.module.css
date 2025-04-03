@@ -1,0 +1,143 @@
+.tab_highlighted {
+  background-color: #19205f !important;
+  border-radius: 10px !important;
+}
+.photo {
+  /* position: absolute;
+      right: 100px; */
+  transform: rotate(-17deg);
+  /* margin: 0 auto;
+      left: 0px; */
+}
+.video {
+  /* position: absolute;
+      left: 100px; */
+  transform: rotate(17deg);
+  /* margin: 0 auto;
+      left: 0px; */
+}
+
+.custom_file_drop_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px dashed #9f9f9f;
+  height: 200px !important;
+  /* max-width: 300px; */
+  min-width: 85%;
+  /* height: 600px; */
+  aspect-ratio: 9 / 16;
+  /* width: 100%; */
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 20px;
+}
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .custom_file_drop_area {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .custom_file_drop_area {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .custom_file_drop_area {
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.video_container {
+  aspect-ratio: 9 / 16;
+  height: 300px;
+  /* background-color: yellow; */
+  /* width: 300px; */
+}
+.custom_file_drop_area label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  font-size: 1.2rem;
+  color: #333;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.custom_file_drop_area input {
+  display: none;
+}
+.sticky {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+}
+.input_field {
+  color: #9f9f9f !important;
+  letter-spacing: 0.5px !important;
+  font-size: 14px !important;
+}
+
+/* accordion styling */
+/* Accordion.module.css */
+
+/* .accordionItem {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+} */
+
+/* .accordionHeader {
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.iconOpen,
+.iconClosed {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+/* .accordionContent {
+  padding: 10px;
+} */
+
+/* .advancedSettings {
+  display: flex;
+  flex-direction: column;
+}
+
+.settingItem {
+  margin-bottom: 10px;
+}
+
+
+.settingDescription {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+*/

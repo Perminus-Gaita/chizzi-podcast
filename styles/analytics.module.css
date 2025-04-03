@@ -1,0 +1,30 @@
+.card:hover {
+  box-shadow: rgba(0, 184, 255, 0.2) 0px 2px 8px 0px;
+}
+
+@media (min-width: 768px) {
+  /* Large screens */
+  .card {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* small screens */
+  .card {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.listItem:hover {
+  border-left: 2px solid #00b8ff;
+}
+
+.btn {
+  background-color: rgba(25, 32, 95, 0.3);
+}
+.btn:hover {
+  background-color: #19205f;
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "_id": "6450b53a-903c-46b1-88bc-30ed7fa82f92",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/api/giveaways/get_entries_with_details?giveawayId=65accf464e7234c965289a15",
+    "url": "http://localhost:3000/api/tournament/shuffle",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2024-02-04T11:58:35.379Z",
+    "modified": "2024-09-11T07:40:36.141Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"tournamentId\": \"66e07a3e55d592ad9d260a0e\"\n}\n",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "13eb5c9d-2e2a-43cc-91c1-1f939aa254d5",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/app/api/giveaways/get_entries_with_details?giveawayId=65accf464e7234c965289a15",
+    "url": "http://localhost:3000/api/onboarding/connect",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2024-02-04T12:02:40.325Z",
+    "modified": "2024-02-08T12:36:15.641Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

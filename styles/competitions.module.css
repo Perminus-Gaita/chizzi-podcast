@@ -1,0 +1,248 @@
+.players {
+  border-radius: 50%;
+  padding: 4px;
+  position: absolute;
+  top: -2px;
+  left: 24px;
+  font-size: 16px;
+}
+
+.chip {
+  background-color: #19205f !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  min-width: 70px;
+}
+
+.chip_selected {
+  background-color: #faca00 !important;
+  color: #fff !important;
+  width: 80px !important;
+}
+
+.team_selected {
+  color: #fff !important;
+}
+
+.fixture_paper {
+  background-color: #131633 !important;
+  margin: 5px 0 !important;
+  border-radius: 10px !important;
+  padding: 5px 6px !important;
+}
+
+.count {
+  color: #fff !important;
+  font-size: 16px !important;
+  position: relative !important;
+  top: -31px !important;
+  left: -56% !important;
+}
+
+/* card styling */
+.title_1 {
+  color: #fff !important;
+}
+
+.title_2 {
+  color: var(--primary-orange) !important;
+}
+
+.title_3 {
+  color: var(--main-green) !important;
+}
+
+.menuPaper {
+  background-color: red !important;
+  color: "purple";
+}
+
+.not_started {
+  background-color: #9f9f9f !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+}
+.started {
+  background-color: #78d64b !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+}
+.negative_points {
+  color: #ff02fb !important;
+}
+.positive_points {
+  color: #78d64b !important;
+}
+
+.skeleton {
+  min-width: 345px;
+  max-height: 430px;
+}
+.rectangles {
+  margin: 2px 0;
+}
+.title {
+  color: var(--primary-grey) !important;
+}
+.subtitle {
+  color: #fff !important;
+}
+.input_field {
+  color: #fff !important;
+}
+
+.input_field::placeholder {
+  color: #fff !important;
+}
+
+.loading {
+  color: #fff;
+}
+.loading:after {
+  content: " .";
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 white, 0.5em 0 0 white;
+  }
+}
+
+.comment_scroll::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.comment_scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  width: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #19205f;
+}
+
+.level_2_wrapper::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  /* left: 25%; */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 55.5%;
+  height: 2px;
+  /* background: red; */
+  background-color: #9f9f9f;
+}
+
+.level_2_wrapper li {
+  position: relative;
+  background-color: maroon;
+}
+
+.level_2_wrapper > li::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: #9f9f9f;
+}
+
+.rectangle {
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.level2::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: #9f9f9f;
+}
+
+.level3::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background: #9f9f9f;
+}
+.front_stars,
+.back_stars,
+.star_rating {
+  display: flex;
+}
+
+.front_stars {
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.rock_img,
+.paper_img,
+.scissors_img {
+  width: 40px;
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  .rock_img,
+  .paper_img,
+  .scissors_img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .rock_img,
+  .paper_img,
+  .scissors_img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+/* Entry CARD */
+.input_field {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.card_subheader {
+  position: relative;
+  float: right;
+}
+.avatar {
+  position: relative;
+  top: -1rem;
+}

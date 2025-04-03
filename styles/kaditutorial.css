@@ -1,0 +1,16 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(450px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(900px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 15s linear infinite;
+}
