@@ -30,7 +30,7 @@ export default function Index() {
           >
             <img
               src="/kisiangani.png"
-              alt="Kisiangani Hat"
+              alt="Kisiangani"
               className="w-48 opacity-70 cursor-pointer"
             />
           </motion.div>

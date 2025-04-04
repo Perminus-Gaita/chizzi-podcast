@@ -27,22 +27,22 @@ const Authenticate = () => {
     <div className="space-y-6">
       <div className="text-center space-y-2">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-          Join the Ultimate Kadi Experience
+          Welcome to the Kisiangani Podcaaaast Experience
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          Play, Compete, and Earn with Kadi
+          Cheki, jienjoy, jibambe kuna macompe, magames na magoodies.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="flex flex-col space-y-4">
         <div className="flex items-center space-x-4 p-4 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg">
           <Trophy className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white">
-              Daily Tournaments
+            <h3 className="font-semibold text-gray-900 dark:text-white italic">
+              "Compe ni compe roho safi"
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Compete for real prizes
+            <p className="text-sm text-gray-600 dark:text-gray-300 flex justify-end mt-1">
+              — Mahtma Bhangi
             </p>
           </div>
         </div>
@@ -50,10 +50,10 @@ const Authenticate = () => {
           <Users className="h-8 w-8 text-purple-600 dark:text-purple-400" />
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white">
-              Social Gaming
+              Tucheze pamoja
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Play with friends
+              Play with other Visianganese
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ const Authenticate = () => {
           Welcome Back
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          Your next game awaits
+          Visianganis are waiting for you
         </p>
       </div>
 
@@ -151,7 +151,7 @@ const Authenticate = () => {
         className="w-full text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 
           dark:hover:text-white transition-colors"
       >
-        New to Wufwuf? Create account
+        New to here? Create account
       </button>
     </div>
   );
@@ -170,21 +170,21 @@ const Authenticate = () => {
         >
           <CardContent className="flex flex-col items-center justify-center p-6 space-y-4">
             <Image
-              src="/wufwuf-logo/white.png"
-              alt="Wufwuf logo"
+              src="/kisiangani.png"
+              alt="Kisiangani"
               height={48}
               width={48}
               className="dark:block hidden"
             />
             <Image
-              src="/wufwuf-logo/black.png"
-              alt="Wufwuf logo"
+              src="/kisiangani.png"
+              alt="Kisiangani"
               height={48}
               width={48}
               className="dark:hidden block"
             />
             <h2 className="text-xl font-bold text-gray-900 dark:text-white capitalize">
-              Welcome back, {userProfile.name}!
+              Cheki! Welcome back, {userProfile.name}!
             </h2>
             <Button
               asChild
@@ -212,22 +212,19 @@ const Authenticate = () => {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center space-x-2">
             <Image
-              src="/wufwuf-logo/white.png"
-              alt="Wufwuf logo"
+              src="/kisiangani.png"
+              alt="Kisiangani"
               height={40}
               width={40}
               className="dark:block hidden"
             />
             <Image
-              src="/wufwuf-logo/black.png"
-              alt="Wufwuf logo"
+              src="/kisiangani.png"
+              alt="Kisiangani"
               height={40}
               width={40}
               className="dark:hidden block"
             />
-            <span className="text-2xl font-bold text-indigo-600 dark:text-white">
-              Wufwuf
-            </span>
           </div>
         </CardHeader>
         <CardContent>
