@@ -39,7 +39,7 @@ const Authenticate = () => {
           <Trophy className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white italic">
-              "Compe ni compe roho safi"
+              &quot;Compe ni compe roho safi&quot;
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 flex justify-end mt-1">
               — Mahtma Bhangi
