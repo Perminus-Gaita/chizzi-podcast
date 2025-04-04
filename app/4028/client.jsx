@@ -833,7 +833,7 @@ const TwentyFortyEight = () => {
     <div className="flex justify-center my-8">
       <div className="w-[265px] bg-[#bbada0] rounded-md p-3"> {/* Original game background */}
         <div className="flex justify-between items-center mb-3">
-          <h2 className="text-xl font-bold text-[#776e65]">2048</h2> {/* Original text color */}
+          <h2 className="text-xl font-bold text-[#776e65]">Find Kisiangani</h2> {/* Original text color */}
           <div className="bg-[#eee4da] rounded p-1 text-center"> {/* Original score background */}
             <div className="text-xs text-[#776e65]">SCORE</div>
             <div className="font-bold text-[#776e65]">{score}</div>
@@ -859,7 +859,7 @@ const TwentyFortyEight = () => {
         </div>
         
         <p className="text-xs text-[#776e65] mt-2 text-center">
-          Join the <strong>fukiswis</strong> until you get <strong>Nganuthia!</strong>
+          Join the <strong>comedians</strong> until you get <strong>Kisiangani!</strong>
         </p>
       </div>
     </div>
