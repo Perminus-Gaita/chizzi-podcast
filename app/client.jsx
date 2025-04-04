@@ -1,27 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from "next/image";
-import Link from "next/link";
 
-import Features from "@/components/LandingPage/Features";
-import UserValue from "@/components/LandingPage/UserValue";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { BottomCTA, CTA, HeroSection } from "@/components/LandingPage/CTA";
-import OnboardingStatus from "@/components/LandingPage/OnboardingStatus";
-import LandingPageHeader from "@/components/Navigation/LandingPageHeader";
-import TournamentShowcase from "@/components/LandingPage/TournamentShowcase";
-import CardGamesShowcase from "@/components/LandingPage/CardGamesShowcase";
-
-import {
-  Trophy,
-  Users,
-  Wallet,
-  Gamepad,
-  BarChart,
-  Store,
-  ArrowRight,
-} from "lucide-react";
 import TwentyFortyEight from "./4028/client";
 
 export default function Index() {
