@@ -17,6 +17,24 @@ const SESSION_DURATION = {
 };
 
 /**
+ * Extracts the domain from a hostname or URL
+ * @param {string} hostname - The hostname or URL to extract the domain from
+ * @returns {string} - The extracted domain
+ */
+function extractDomain(hostname) {
+    // If the hostname includes a protocol (http://, https://, etc.), remove it
+    let domain = hostname.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '');
+    
+    // Remove any path, query parameters, or hash fragments
+    domain = domain.split('/')[0];
+    
+    // Remove port if present
+    domain = domain.split(':')[0];
+    
+    return domain;
+}
+
+/**
  * Creates a session in DynamoDB and returns cookie string
  */
 export async function createUserSessionCookieString(userId) {
@@ -45,17 +63,30 @@ export async function createUserSessionCookieString(userId) {
         if (isProduction) {
             cookieOptions.Secure = true;
             cookieOptions.SameSite = 'None';
-            cookieOptions.Domain = 'eotwe-nine.vercel.app';
+            
+            // Use hostname from environment variable and extract domain automatically
+            const hostname = process.env.MYHOSTNAME;
+            cookieOptions.Domain = extractDomain(hostname);
         } 
         // Development-specific settings
         else if (isDevelopment) {
             cookieOptions.Secure = false;
             cookieOptions.SameSite = 'Lax';
+            
+            // For development, you might want to set a domain too
+            if (process.env.MYHOSTNAME) {
+                cookieOptions.Domain = extractDomain(process.env.MYHOSTNAME);
+            }
         }
         // Any other environment (staging, etc.)
         else {
             cookieOptions.Secure = true;
             cookieOptions.SameSite = 'Lax';
+            
+            // For other environments, extract domain if hostname is provided
+            if (process.env.MYHOSTNAME) {
+                cookieOptions.Domain = extractDomain(process.env.MYHOSTNAME);
+            }
         }
 
         // Create cookie string with proper formatting
