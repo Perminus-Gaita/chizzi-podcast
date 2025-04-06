@@ -29,31 +29,31 @@ export default function Index() {
             onClick={handleWobble}
           >
             <img
-              src="/kisiangani.png"
-              alt="Kisiangani"
+              src="/rapture-no-bg.png"
+              alt="Rapture"
               className="w-48 opacity-70 cursor-pointer"
             />
           </motion.div>
           
           {/* Text overlay */}
           <div className="text-center relative z-10">
-            <h1 className="text-5xl font-bold mb-2 text-gray-800 dark:text-white drop-shadow-md">The Kisiangani Podcast</h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300 drop-shadow-sm">Checki, you guy my guy.</p>
+            <h1 className="text-5xl font-bold mb-2 text-gray-800 dark:text-white drop-shadow-md">Chizzi Podcast</h1>
+            <p className="text-xl text-gray-700 dark:text-gray-300 drop-shadow-sm">Mambo vipi? Kama kawa, kama dawa.</p>
           </div>
         </div>
       </div>
 
       {/* Updated subscriber section to match Swift Podcast style */}
       <div className="subscribers">
-        <p className="sub-count">Current YouTube subscribers: <strong>4,867</strong></p>
+        <p className="sub-count">Current YouTube subscribers: <strong>11,867</strong></p>
         <div className="sub-target">
           <span>0</span>
           <div className="progress-bar">
-            <div className="progress" style={{ width: '90%' }}></div>
+            <div className="progress" style={{ width: '60%' }}></div>
           </div>
-          <span>5,000</span>
+          <span>20,000</span>
         </div>
-        <p style={{ textAlign: 'center', marginTop: '10px' }}>Help us reach our YouTube goal!</p>
+        <p style={{ textAlign: 'center', marginTop: '10px' }}>Road to 20,000 subscribers!</p>
       </div>
 
       {/* Nganuthia Game UI */}
@@ -93,10 +93,10 @@ export default function Index() {
           }
         `}</style>
 
-        <div className="mx-auto max-w-full px-4 flex justify-center">
+        <div className="mx-auto max-w-full flex justify-center">
           {/* Centered Nganuthia Leaderboard Card */}
-          <div className="w-64 h-80 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700 p-4 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-            <h3 className="font-bold text-center mb-3 dark:text-gray-100">Find Kisiangani Leaderboard</h3>
+          <div className="w-[340px] h-80 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700 p-4 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+            <h3 className="font-bold text-center mb-3 dark:text-gray-100">Find The Sayantist Leaderboard</h3>
             <div className="space-y-2">
               {[
                 { avatar: "https://randomuser.me/api/portraits/men/45.jpg", name: "Bry Tea", username: "@Bry_T", points: 132 },

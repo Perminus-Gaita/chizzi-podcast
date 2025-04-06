@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-
 import "../../styles/2048.css";
 
+// Game Manager class handles game logic
 class GameManager {
   constructor(size, setGrid, setScore, setBestScore, setGameState) {
     this.size = size;
@@ -28,7 +28,7 @@ class GameManager {
     this.score = 0;
     this.over = false;
     this.won = false;
-    this.keepPlaying = false; // Initialize as a boolean
+    this.keepPlaying = false;
     this.addStartTiles();
   }
 
@@ -236,6 +236,7 @@ class GameManager {
   }
 }
 
+// Local Storage Manager for saving and retrieving game state
 class LocalStorageManager {
   constructor() {
     this.bestScoreKey = "bestScore";
@@ -296,6 +297,7 @@ class LocalStorageManager {
   }
 }
 
+// Keyboard Input Manager for handling user interactions
 class KeyboardInputManager {
   constructor() {
     this.events = {};
@@ -333,6 +335,7 @@ class KeyboardInputManager {
     // Add button event listeners
     this.bindButtonPress(".retry-button", () => this.emit("restart"));
     this.bindButtonPress(".restart-button", () => this.emit("restart"));
+    this.bindButtonPress(".new-game", () => this.emit("restart"));
     this.bindButtonPress(".keep-playing-button", () =>
       this.emit("keepPlaying")
     );
@@ -404,6 +407,7 @@ class KeyboardInputManager {
   }
 }
 
+// Grid class for managing the game grid
 class Grid {
   constructor(size, previousState = null) {
     this.size = size;
@@ -523,53 +527,7 @@ class Grid {
   }
 }
 
-const ScoreBoard = ({ score, bestScore }) => {
-  const scoreStyle = {
-    backgroundColor: '#bbada0',
-    padding: '5px 10px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    borderRadius: '3px',
-    color: '#eee4da',
-    position: 'relative',
-    display: 'inline-block',
-    width: '60px',
-    height: '40px',
-    textAlign: 'center',
-    margin: '0 4px',
-  };
-  
-  const labelStyle = {
-    position: 'absolute',
-    top: '5px',
-    left: '0',
-    right: '0',
-    textTransform: 'uppercase',
-    fontSize: '11px',
-    lineHeight: '13px',
-    textAlign: 'center',
-    color: '#eee4da',
-  };
-  
-  const valueStyle = {
-    marginTop: '15px',
-    fontSize: '16px',
-  };
-
-  return (
-    <div className="flex justify-between w-full">
-      <div style={scoreStyle}>
-        <div style={labelStyle}>Score</div>
-        <div style={valueStyle}>{score}</div>
-      </div>
-      <div style={scoreStyle}>
-        <div style={labelStyle}>Best</div>
-        <div style={valueStyle}>{bestScore}</div>
-      </div>
-    </div>
-  );
-};
-
+// Tile class for managing individual tiles
 class Tile {
   constructor(position, value) {
     this.x = position.x;
@@ -603,21 +561,26 @@ class Tile {
   }
 }
 
-const KIBE_IMAGES = [
-  { value: 2, img: "/kibe/2.png" },
-  { value: 4, img: "/kibe/4.png" },
-  { value: 8, img: "/kibe/8.png" },
-  { value: 16, img: "/kibe/16.png" },
-  { value: 32, img: "/kibe/32.png" },
-  { value: 64, img: "/kibe/64.png" },
-  // ... up to 2048
-];
+// Define the Kibe images for each tile value
+const KIBE_IMAGES = {
+  2: "/kibe/2.png",
+  4: "/kibe/4.png",
+  8: "/kibe/8.png",
+  16: "/kibe/16.png",
+  32: "/kibe/32.png",
+  64: "/kibe/64.png",
+  128: "/kibe/128.png",
+  256: "/kibe/256.png",
+  512: "/kibe/512.png",
+  1024: "/kibe/1024.png",
+  2048: "/kibe/2048.png",
+};
 
+// Tile Component - renders individual tiles
 const TileComponent = ({ tile }) => {
   const [position, setPosition] = useState(tile);
   const [merged, setMerged] = useState(false);
   const [newTile, setNewTile] = useState(false);
-  const currentStage = KIBE_IMAGES.find((s) => s.value === tile.value);
 
   useEffect(() => {
     if (tile.mergedFrom) {
@@ -630,52 +593,31 @@ const TileComponent = ({ tile }) => {
     setPosition(tile);
   }, [tile]);
 
-  // Adjusted for the smaller size to match the design
+  // Calculate the position
   const getTransform = () => {
-    // Precise positioning calculation - each tile position is 59px from the previous
     const x = position.x * 59;
     const y = position.y * 59;
     return `translate(${x}px, ${y}px)`;
   };
 
-  const style = {
-    transform: getTransform(),
-    width: '52px',
-    height: '52px',
-    position: 'absolute',
-    transition: '100ms ease-in-out',
-  };
-
-  const innerStyle = {
-    width: '52px',
-    height: '52px',
-    lineHeight: '52px',
-    borderRadius: '3px',
-    backgroundColor: getTileColor(position.value),
-    textAlign: 'center',
-    fontWeight: 'bold',
-    zIndex: 10,
-    fontSize: '24px',
-    color: position.value > 4 ? '#f9f6f2' : '#776e65',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  };
-
-  const imageStyle = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-  };
+  // Determine if we have a Kibe image for this tile
+  const hasKibeImage = KIBE_IMAGES[position.value];
 
   return (
-    <div style={style} className={`${merged ? 'tile-merged' : ''} ${newTile ? 'tile-new' : ''}`}>
-      <div style={innerStyle}>
-        {currentStage?.img ? (
-          <img
-            src={currentStage.img}
-            alt={`${position.value}`}
-            style={imageStyle}
+    <div 
+      className={`tile tile-${position.value} ${merged ? 'tile-merged' : ''} ${newTile ? 'tile-new' : ''}`} 
+      style={{ transform: getTransform() }}
+    >
+      <div className="tile-inner">
+        {hasKibeImage ? (
+          <img 
+            src={KIBE_IMAGES[position.value]} 
+            alt={`Tile ${position.value}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain'
+            }}
           />
         ) : (
           position.value
@@ -685,131 +627,136 @@ const TileComponent = ({ tile }) => {
   );
 };
 
-// Helper function to determine tile color based on value
-function getTileColor(value) {
-  const colors = {
-    2: '#eee4da',
-    4: '#ede0c8',
-    8: '#f2b179',
-    16: '#f59563',
-    32: '#f67c5f',
-    64: '#f65e3b',
-    128: '#edcf72',
-    256: '#edcc61',
-    512: '#edc850',
-    1024: '#edc53f',
-    2048: '#edc22e',
-  };
-  return colors[value] || '#3c3a32'; // Default color for super tiles
-}
-
-const GameGrid = ({ grid, gameState, handleRestart }) => {
+// Sponsor Avatar Component
+const SponsorAvatar = ({ avatar, onClick }) => {
   return (
-    <div className="game-container" style={{ width: '242px', height: '250px', background: '#cdc1b4', borderRadius: '5px', padding: '7px', position: 'relative' }}>
-      <div className="grid-container" style={{ position: 'absolute', zIndex: 1 }}>
+    <div className="sponsor-avatar" onClick={onClick} style={{
+      backgroundImage: `url(${avatar})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
+    </div>
+  );
+};
+
+// Game Grid Component
+const GameGrid = ({ grid, gameState, handleRestart, handleKeepPlaying }) => {
+  return (
+    <div className="game-container">
+      <div className="grid-container">
         {[...Array(4)].map((_, x) => (
-          <div key={x} className="grid-row" style={{ marginBottom: '7px', display: 'flex' }}>
+          <div key={x} className="grid-row">
             {[...Array(4)].map((_, y) => (
-              <div key={`${x}-${y}`} className="grid-cell" style={{ 
-                width: '52px', 
-                height: '52px', 
-                marginRight: y < 3 ? '7px' : 0, 
-                background: 'rgba(238, 228, 218, 0.35)', 
-                borderRadius: '3px',
-                display: 'inline-block'
-              }} />
+              <div key={`${x}-${y}`} className="grid-cell"></div>
             ))}
           </div>
         ))}
       </div>
-      <div className="tile-container" style={{ position: 'absolute', zIndex: 2 }}>
+
+      <div className="tile-container">
         {grid?.cells
           .flat()
-          .map(
-            (tile, i) =>
-              tile && <TileComponent key={`${tile.x}-${tile.y}`} tile={tile} />
-          )}
+          .filter(Boolean)
+          .map((tile) => (
+            <TileComponent key={`${tile.x}-${tile.y}`} tile={tile} />
+          ))}
       </div>
+
       {gameState.over && (
-        <GameMessage won={gameState.won} handleRestart={handleRestart} />
+        <div className={`game-message ${gameState.won ? 'game-won' : ''}`}>
+          <p className="message-text">
+            {gameState.won ? "You found the Sayantist!" : "Game over!"}
+          </p>
+          <div>
+            {!gameState.won && (
+              <button
+                className="message-button"
+                onClick={handleRestart}
+              >
+                Try again
+              </button>
+            )}
+            {gameState.won && (
+              <>
+                <button
+                  className="message-button keep-playing-button"
+                  onClick={handleKeepPlaying}
+                  style={{ marginRight: '8px' }}
+                >
+                  Keep going
+                </button>
+                <button
+                  className="message-button"
+                  onClick={handleRestart}
+                >
+                  New game
+                </button>
+              </>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );
 };
 
-const GameMessage = ({ won, handleRestart }) => (
-  <div style={{
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    background: won ? 'rgba(237, 194, 46, 0.5)' : 'rgba(238, 228, 218, 0.5)',
-    zIndex: 100,
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    animation: 'fade-in 800ms ease 200ms both'
-  }}>
-    <p style={{ 
-      fontSize: '24px', 
-      fontWeight: 'bold',
-      color: won ? '#f9f6f2' : '#776e65',
-      marginBottom: '15px'
+// Sponsors Modal Component
+const SponsorsModal = ({ isOpen, onClose }) => {
+  const sponsors = [
+    { avatar: "https://randomuser.me/api/portraits/men/83.jpg", name: "Bry Tea", username: "@Bry_T", amount: "$400" },
+    { avatar: "https://randomuser.me/api/portraits/women/79.jpg", name: "Tyler King", username: "@tylerking", amount: "$350" },
+    { avatar: "https://randomuser.me/api/portraits/men/51.jpg", name: "Amanda Zhao", username: "@amandalovesai", amount: "$225" },
+    { avatar: "https://randomuser.me/api/portraits/women/44.jpg", name: "Robert Lee", username: "@roblee89", amount: "$175" }
+  ];
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal modal-shown" onClick={(e) => {
+      if (e.target === e.currentTarget) onClose();
     }}>
-      {won ? "You win!" : "Game over!"}
-    </p>
-    <div style={{ marginTop: '15px' }}>
-      {!won && (
-        <a 
-          className="cursor-pointer" 
-          onClick={handleRestart}
-          style={{
-            display: 'inline-block',
-            background: '#8f7a66',
-            borderRadius: '3px',
-            padding: '0 10px',
-            textDecoration: 'none',
-            color: '#f9f6f2',
-            height: '30px',
-            lineHeight: '30px',
-            fontSize: '13px'
-          }}
-        >
-          Try again
-        </a>
-      )}
-      {won && (
-        <a 
-          className="cursor-pointer"
-          style={{
-            display: 'inline-block',
-            background: '#8f7a66',
-            borderRadius: '3px',
-            padding: '0 10px',
-            textDecoration: 'none',
-            color: '#f9f6f2',
-            height: '30px',
-            lineHeight: '30px',
-            fontSize: '13px'
-          }}
-        >
-          Keep going
-        </a>
-      )}
+      <div className="modal-content">
+        <div className="modal-header">
+          <div className="modal-title">Game Sponsors</div>
+          <button className="close-button" onClick={onClose}>&times;</button>
+        </div>
+        <div className="sponsors-list">
+          {sponsors.map((sponsor, index) => (
+            <div key={index} className="sponsor-card">
+              <div className="sponsor-avatar-lg" style={{
+                backgroundImage: `url(${sponsor.avatar})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}></div>
+              <div className="sponsor-info">
+                <div className="sponsor-name">{sponsor.name}</div>
+                <div className="sponsor-username">{sponsor.username}</div>
+              </div>
+              <div className="sponsor-amount">{sponsor.amount}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-const TwentyFortyEight = () => {
+// Main Game Component
+const FindTheSayantist = () => {
   const gameManagerRef = useRef(null);
-
   const [grid, setGrid] = useState(null);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [gameState, setGameState] = useState({ over: false, won: false });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Sponsor avatars
+  const sponsors = [
+    { avatar: "https://randomuser.me/api/portraits/men/83.jpg", name: "Bry Tea" },
+    { avatar: "https://randomuser.me/api/portraits/women/79.jpg", name: "Tyler King" },
+    { avatar: "https://randomuser.me/api/portraits/men/51.jpg", name: "Amanda Zhao" },
+    { avatar: "https://randomuser.me/api/portraits/women/44.jpg", name: "Robert Lee" }
+  ];
 
   useEffect(() => {
     const gameManager = new GameManager(
@@ -829,41 +776,71 @@ const TwentyFortyEight = () => {
     }
   };
 
+  const handleKeepPlaying = () => {
+    if (gameManagerRef.current) {
+      gameManagerRef.current.handleKeepPlaying();
+    }
+  };
+
   return (
-    <div className="flex justify-center my-8">
-      <div className="w-[265px] bg-[#bbada0] rounded-md p-3"> {/* Original game background */}
-        <div className="flex justify-between items-center mb-3">
-          <h2 className="text-xl font-bold text-[#776e65]">Find Kisiangani</h2> {/* Original text color */}
-          <div className="bg-[#eee4da] rounded p-1 text-center"> {/* Original score background */}
-            <div className="text-xs text-[#776e65]">SCORE</div>
-            <div className="font-bold text-[#776e65]">{score}</div>
-          </div>
+    <div className="game-wrapper">
+      {/* Header with title and score */}
+      <div className="header">
+        <h2 className="title">Find the Sayantist</h2>
+        <div className="score-box">
+          <div className="score-label">SCORE</div>
+          <div className="score-value">{score}</div>
         </div>
-        
-        <GameGrid
-          grid={grid}
-          gameState={gameState}
-          handleRestart={handleRestart}
-        />
-        
-        <div className="flex justify-between items-center mt-3">
-          <button
-            onClick={handleRestart}
-            className="bg-[#8f7a66] text-white text-xs px-2 py-1 rounded"
-          >
-            New Game
-          </button>
-          <div className="text-xs text-[#776e65]">
-            Best: <span className="font-bold">{bestScore}</span>
-          </div>
-        </div>
-        
-        <p className="text-xs text-[#776e65] mt-2 text-center">
-          Join the <strong>comedians</strong> until you get <strong>Kisiangani!</strong>
-        </p>
       </div>
+
+      {/* Sponsors section */}
+      <div className="sponsors-section">
+        <div className="sponsors-part">
+          <div className="sponsors-text">Sponsored by:</div>
+          <div className="sponsors-avatars">
+            {sponsors.map((sponsor, index) => (
+              <SponsorAvatar 
+                key={index} 
+                avatar={sponsor.avatar} 
+                onClick={() => setIsModalOpen(true)} 
+              />
+            ))}
+          </div>
+        </div>
+        <div className="sponsors-total">$1,150</div>
+      </div>
+
+      {/* Game prize info */}
+      <p className="game-prize">
+        <span className="game-prize-title">Winner gets</span>
+        one <strong>ticket 🎟️</strong> to watch <strong>RAW N UNKUT 4</strong> online
+      </p>
+
+      {/* Game grid */}
+      <GameGrid
+        grid={grid}
+        gameState={gameState}
+        handleRestart={handleRestart}
+        handleKeepPlaying={handleKeepPlaying}
+      />
+
+      {/* Footer */}
+      <div className="footer">
+        <button className="new-game" onClick={handleRestart}>New Game</button>
+        <div className="best-score">
+          Best: <span className="best-value">{bestScore}</span>
+        </div>
+      </div>
+
+      {/* Game instruction */}
+      <p className="game-instruction">
+        Combine the <strong>species</strong> until you get <strong>The Sayantist!</strong>
+      </p>
+
+      {/* Sponsors Modal */}
+      <SponsorsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
 
-export default TwentyFortyEight;
+export default FindTheSayantist;

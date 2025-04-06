@@ -27,10 +27,10 @@ const Authenticate = () => {
     <div className="space-y-6">
       <div className="text-center space-y-2">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-          Welcome to the Kisiangani Podcaaaast Experience
+          Welcome to base ya  MaChizzi. Piga nduru!
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          Cheki, jienjoy, jibambe kuna macompe, magames na magoodies.
+          Kama kawa, kama dawa. Kuna macompe, magames na mapochopocho.
         </p>
       </div>
 
@@ -39,10 +39,10 @@ const Authenticate = () => {
           <Trophy className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white italic">
-              &quot;Compe ni compe roho safi&quot;
+              &quot;Mpanda ngazi atavuna ngazi.&quot;
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 flex justify-end mt-1">
-              — Mahtma Bhangi
+              — Rapture the sayantist
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ const Authenticate = () => {
               Tucheze pamoja
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Play with other Visianganese
+              Play with other MaChizzi
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ const Authenticate = () => {
           Welcome Back
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          Visianganis are waiting for you
+          MaChizzi are waiting for you
         </p>
       </div>
 
@@ -170,21 +170,21 @@ const Authenticate = () => {
         >
           <CardContent className="flex flex-col items-center justify-center p-6 space-y-4">
             <Image
-              src="/kisiangani.png"
-              alt="Kisiangani"
+              src="/rapture-no-bg.png"
+              alt="Rapture"
               height={48}
               width={48}
               className="dark:block hidden"
             />
             <Image
-              src="/kisiangani.png"
-              alt="Kisiangani"
+              src="/rapture-no-bg.png"
+              alt="Rapture"
               height={48}
               width={48}
               className="dark:hidden block"
             />
             <h2 className="text-xl font-bold text-gray-900 dark:text-white capitalize">
-              Cheki! Welcome back, {userProfile.name}!
+              Kama kawa, Welcome back, {userProfile.name}!
             </h2>
             <Button
               asChild
@@ -212,15 +212,15 @@ const Authenticate = () => {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center space-x-2">
             <Image
-              src="/kisiangani.png"
-              alt="Kisiangani"
+              src="/rapture-no-bg.png"
+              alt="Rapture"
               height={40}
               width={40}
               className="dark:block hidden"
             />
             <Image
-              src="/kisiangani.png"
-              alt="Kisiangani"
+              src="/rapture-no-bg.png"
+              alt="Rapture"
               height={40}
               width={40}
               className="dark:hidden block"

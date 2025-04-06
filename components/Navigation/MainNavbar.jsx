@@ -229,7 +229,7 @@ const MainNavbar = ({ handleSidebarClose, handleSidebarOpen }) => {
 
           <Link href={userProfile ? "/lobby" : "/"}>
             <Image
-              src={mode === "light" ? "/kisiangani.png" : "/kisiangani.png"}
+              src={mode === "light" ? "/rapture-no-bg.png" : "/rapture-no-bg.png"}
               alt="logo"
               width={40}
               height={40}
@@ -247,7 +247,7 @@ const MainNavbar = ({ handleSidebarClose, handleSidebarOpen }) => {
           ) : (
             <Link href="/" className="flex items-center gap-2 ">
               <Image
-                src={mode === "light" ? "kisiangani.png" : "kisiangani.png"}
+                src={mode === "light" ? "/rapture-no-bg.png" : "/rapture-no-bg.png"}
                 alt="logo"
                 width={40}
                 height={40}
