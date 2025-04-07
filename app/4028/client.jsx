@@ -581,6 +581,7 @@ const TileComponent = ({ tile }) => {
   const [position, setPosition] = useState(tile);
   const [merged, setMerged] = useState(false);
   const [newTile, setNewTile] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     if (tile.mergedFrom) {
@@ -591,6 +592,8 @@ const TileComponent = ({ tile }) => {
       setTimeout(() => setNewTile(false), 200);
     }
     setPosition(tile);
+    // Reset image error state when tile changes
+    setImageError(false);
   }, [tile]);
 
   // Calculate the position
@@ -609,7 +612,7 @@ const TileComponent = ({ tile }) => {
       style={{ transform: getTransform() }}
     >
       <div className="tile-inner">
-        {hasKibeImage ? (
+        {hasKibeImage && !imageError ? (
           <img 
             src={KIBE_IMAGES[position.value]} 
             alt={`Tile ${position.value}`}
@@ -618,6 +621,7 @@ const TileComponent = ({ tile }) => {
               height: '100%',
               objectFit: 'contain'
             }}
+            onError={() => setImageError(true)}
           />
         ) : (
           position.value
@@ -625,7 +629,7 @@ const TileComponent = ({ tile }) => {
       </div>
     </div>
   );
-};
+}
 
 // Sponsor Avatar Component
 const SponsorAvatar = ({ avatar, onClick }) => {
