@@ -52,6 +52,10 @@ const UserSchema = new mongoose.Schema({
     bannerImage: {
         type: String
     },
+    // domain this user created an account from
+    domain: {
+        type: String
+    },
     socialLinks: {
         type: [SocialLinkSchema],
         validate: [
