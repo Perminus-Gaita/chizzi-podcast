@@ -82,7 +82,7 @@ export async function upsertUserIntoMongoDB({
                 profilePicture: profilePicture,
                 providers: ["google"],
                 mainEmail: googleEmail,
-                domain: "your-site-demo.vercel.app",
+                domain: "your-sport-site-demo.vercel.app",
                 onboardingStatus: "discover",
                 currentWorkspaceId: newUserId,
                 creator: newUserId,

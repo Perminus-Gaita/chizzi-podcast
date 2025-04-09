@@ -72,6 +72,9 @@ const UserSchema = new mongoose.Schema({
         enum: ['individual', 'workspace'],
         required: true
     },
+    domain: {
+        type: String,
+    },
     ...individualUserSchema,
     ...workspaceUserSchema
 },
