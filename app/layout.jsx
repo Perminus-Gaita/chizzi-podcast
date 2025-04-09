@@ -40,7 +40,7 @@ export const metadata = {
     url: "https://your-sports-site-demo.vercel.app",
     images: [
       {
-        url: "/images/wufwuf-tournament-preview.jpg",
+        url: "/metadata-image.png",
         width: 1200,
         height: 630,
         alt: "Wufwuf Kadi Esports Tournament Platform",
