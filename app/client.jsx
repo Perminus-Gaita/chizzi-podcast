@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import TwentyFortyEight from "./4028/client";
+import Socials from "./z-components/client-socials";
+import FantasyLeaderboard from "./z-components/leaderboard"; // Import the new component
 
 export default function Index() {
   const [isWobbling, setIsWobbling] = useState(false);
@@ -29,39 +30,27 @@ export default function Index() {
             onClick={handleWobble}
           >
             <img
-              src="/rapture-no-bg.png"
-              alt="Rapture"
+              src="/your-logo-here.png"
+              alt="your-logo-here"
               className="w-48 opacity-70 cursor-pointer"
             />
           </motion.div>
           
           {/* Text overlay */}
           <div className="text-center relative z-10">
-            <h1 className="text-5xl font-bold mb-2 text-gray-800 dark:text-white drop-shadow-md">Chizzi Podcast</h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300 drop-shadow-sm">Mambo vipi? Kama kawa, kama dawa.</p>
+            <h1 className="text-5xl font-bold mb-2 text-gray-800 dark:text-white drop-shadow-md">Your brand name here</h1>
+            <p className="text-xl text-gray-700 dark:text-gray-300 drop-shadow-sm">Your cool tag-line.</p>
           </div>
         </div>
+      </div>
+
+      {/* Centered leaderboard using the new component */}
+      <div className="my-12 relative">
+        <FantasyLeaderboard />
       </div>
 
       {/* Updated subscriber section to match Swift Podcast style */}
       <div className="subscribers">
-        <p className="sub-count">Current YouTube subscribers: <strong>11,867</strong></p>
-        <div className="sub-target">
-          <span>0</span>
-          <div className="progress-bar">
-            <div className="progress" style={{ width: '60%' }}></div>
-          </div>
-          <span>20,000</span>
-        </div>
-        <p style={{ textAlign: 'center', marginTop: '10px' }}>Road to 20,000 subscribers!</p>
-      </div>
-
-      {/* Nganuthia Game UI */}
-      <TwentyFortyEight />
-
-      {/* Centered leaderboard with no scroll functionality */}
-      <div className="my-12 relative">
-        {/* CSS to hide scrollbar */}
         <style jsx global>{`
           .subscribers {
             margin: 40px 0;
@@ -92,37 +81,33 @@ export default function Index() {
             border-radius: 5px;
           }
         `}</style>
-
-        <div className="mx-auto max-w-full flex justify-center">
-          {/* Centered Nganuthia Leaderboard Card */}
-          <div className="w-[340px] h-80 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700 p-4 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
-            <h3 className="font-bold text-center mb-3 dark:text-gray-100">Find The Sayantist Leaderboard</h3>
-            <div className="space-y-2">
-              {[
-                { avatar: "https://randomuser.me/api/portraits/men/45.jpg", name: "Bry Tea", username: "@Bry_T", points: 132 },
-                { avatar: "https://randomuser.me/api/portraits/women/44.jpg", name: "DjMozz", username: "@DjMozz", points: 87 },
-                { avatar: "https://randomuser.me/api/portraits/men/55.jpg", name: "Stan MMMMM", username: "@Stan.M5", points: 65 },
-                { avatar: "https://randomuser.me/api/portraits/women/67.jpg", name: "Jim Eriko", username: "@jimneriko", points: 52 },
-                { avatar: "https://randomuser.me/api/portraits/men/78.jpg", name: "Enock Mokua", username: "@enockmokua", points: 44 }
-              ].map((player, index) => (
-                <div key={index} className="flex items-center justify-between py-1 border-b border-gray-100 dark:border-gray-700">
-                  <div className="flex items-center">
-                    <span className="mr-2 text-sm dark:text-gray-300">{index + 1}.</span>
-                    <div className="w-6 h-6 rounded-full overflow-hidden mr-2">
-                      <img src={player.avatar} alt={`${player.name}'s avatar`} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium dark:text-gray-200">{player.name}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{player.username}</div>
-                    </div>
-                  </div>
-                  <div className="text-sm font-bold dark:text-gray-300">{player.points}</div>
-                </div>
-              ))}
-            </div>
+        
+        <p className="sub-count">
+          <a 
+            href="/login" 
+            style={{ 
+              textDecoration: 'underline', 
+              cursor: 'pointer',
+              display: 'inline-block',
+              transition: 'transform 0.2s ease'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            Join <strong>11,867</strong> members.
+          </a>
+        </p>
+        <div className="sub-target">
+          <span>0</span>
+          <div className="progress-bar">
+            <div className="progress" style={{ width: '60%' }}></div>
           </div>
+          <span>20,000</span>
         </div>
+        <p style={{ textAlign: 'center', marginTop: '10px' }}>Road to 20,000 members!</p>
       </div>
+
+      <Socials />
     </>
   );
 }

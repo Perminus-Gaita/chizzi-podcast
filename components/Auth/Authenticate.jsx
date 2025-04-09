@@ -27,10 +27,10 @@ const Authenticate = () => {
     <div className="space-y-6">
       <div className="text-center space-y-2">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-          Welcome to base ya  MaChizzi. Piga nduru!
+          Welcome to the home of &quot;what you call your fanbase&quot;
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          Kama kawa, kama dawa. Kuna macompe, magames na mapochopocho.
+          Together we kick it. Together we play.
         </p>
       </div>
 
@@ -39,10 +39,10 @@ const Authenticate = () => {
           <Trophy className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white italic">
-              &quot;Mpanda ngazi atavuna ngazi.&quot;
+              &quot;My team will win this season.&quot;
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 flex justify-end mt-1">
-              — Rapture the sayantist
+              — Every seasaon, every Arsenal fan.
             </p>
           </div>
         </div>
@@ -50,10 +50,10 @@ const Authenticate = () => {
           <Users className="h-8 w-8 text-purple-600 dark:text-purple-400" />
           <div>
             <h3 className="font-semibold text-gray-900 dark:text-white">
-              Tucheze pamoja
+              Play together.
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Play with other MaChizzi
+              Play with other &quot;what you call your fanbase&quot;
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ const Authenticate = () => {
           Welcome Back
         </h1>
         <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-          MaChizzi are waiting for you
+          We are waiting for you
         </p>
       </div>
 
@@ -170,15 +170,15 @@ const Authenticate = () => {
         >
           <CardContent className="flex flex-col items-center justify-center p-6 space-y-4">
             <Image
-              src="/rapture-no-bg.png"
-              alt="Rapture"
+              src="/your-logo-here.png"
+              alt="your-logo-here"
               height={48}
               width={48}
               className="dark:block hidden"
             />
             <Image
-              src="/rapture-no-bg.png"
-              alt="Rapture"
+              src="/your-logo-here.png"
+              alt="your-logo-here"
               height={48}
               width={48}
               className="dark:hidden block"
@@ -212,15 +212,15 @@ const Authenticate = () => {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center space-x-2">
             <Image
-              src="/rapture-no-bg.png"
-              alt="Rapture"
+              src="/your-logo-here.png"
+              alt="your-logo-here"
               height={40}
               width={40}
               className="dark:block hidden"
             />
             <Image
-              src="/rapture-no-bg.png"
-              alt="Rapture"
+              src="/your-logo-here.png"
+              alt="your-logo-here"
               height={40}
               width={40}
               className="dark:hidden block"
