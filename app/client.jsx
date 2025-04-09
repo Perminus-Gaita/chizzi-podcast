@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import Socials from "./z-components/client-socials";
 import FantasyLeaderboard from "./z-components/leaderboard"; // Import the new component
+import Link from 'next/link';
 
 export default function Index() {
   const [isWobbling, setIsWobbling] = useState(false);
@@ -83,7 +84,7 @@ export default function Index() {
         `}</style>
         
         <p className="sub-count">
-          <a 
+          <Link
             href="/login" 
             style={{ 
               textDecoration: 'underline', 
@@ -95,7 +96,7 @@ export default function Index() {
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
             Join <strong>11,867</strong> members.
-          </a>
+          </Link>
         </p>
         <div className="sub-target">
           <span>0</span>
