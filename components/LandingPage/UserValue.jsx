@@ -75,7 +75,7 @@ const UserValue = () => {
             </div>
 
             <Link
-              href={userProfile?.uuid ? "/lobby" : "/login"}
+              href={userProfile?.uuid ? "/arena" : "/login"}
               className="inline-block"
             >
               <button className="group flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition-all duration-300">
@@ -150,7 +150,7 @@ const UserValue = () => {
             </div>
 
             <Link
-              href={userProfile?.uuid ? "/lobby" : "/login"}
+              href={userProfile?.uuid ? "/arena" : "/login"}
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white px-6 py-3 rounded-lg transition-all duration-300"
             >
               <span className="font-semibold">Create Tournament</span>

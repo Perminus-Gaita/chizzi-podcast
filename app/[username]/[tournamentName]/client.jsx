@@ -630,7 +630,7 @@ const UserTournament = ({ tournament, creator }) => {
         page_title: `Kadi Tournament`,
         show_back: true,
         show_menu: false,
-        route_to: `/lobby?tab=tournaments`,
+        route_to: `/arena?tab=tournaments`,
       })
     );
   }, []);

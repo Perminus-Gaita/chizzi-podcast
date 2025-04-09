@@ -191,7 +191,7 @@ const Authenticate = () => {
               className="w-full bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 
                 dark:hover:bg-indigo-700 text-white text-lg font-semibold py-6"
             >
-              <Link href="/lobby">Enter Lobby</Link>
+              <Link href="/arena">Enter Arena</Link>
             </Button>
           </CardContent>
         </Card>

@@ -15,10 +15,10 @@ export default function Error({ error, reset }) {
             Try again.
           </button>
           <button
-            onClick={() => window.location.href = '/lobby'}
+            onClick={() => window.location.href = '/arena'}
             className="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 w-full justify-center"
           >
-            Go to Lobby
+            Go to Arena
           </button>
         </div>
       </div>

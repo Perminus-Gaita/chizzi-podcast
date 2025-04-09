@@ -178,7 +178,7 @@ const PublicTournaments = ({ username, tournaments, tournamentsMutate }) => {
               later or explore existing tournaments.
             </p>
 
-            <Link href="/lobby">
+            <Link href="/arena">
               <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                 Browse Other Tournaments
               </button>

@@ -1051,7 +1051,7 @@ const Settings = ({ tournament, products }) => {
         })
       );
 
-      router.push(`/lobby`);
+      router.push(`/arena`);
       router.refresh();
     } catch (error) {
       console.error("Error deleting tournament:", error);

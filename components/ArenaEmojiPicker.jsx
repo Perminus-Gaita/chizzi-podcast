@@ -8,7 +8,7 @@ import { Smile } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const LobbyEmojiPicker = ({ onEmojiSelect, disabled = false }) => {
+const ArenaEmojiPicker = ({ onEmojiSelect, disabled = false }) => {
   const [showPicker, setShowPicker] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const buttonRef = useRef(null);
@@ -135,4 +135,4 @@ const LobbyEmojiPicker = ({ onEmojiSelect, disabled = false }) => {
   );
 };
 
-export default LobbyEmojiPicker;
+export default ArenaEmojiPicker;

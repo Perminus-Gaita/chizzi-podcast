@@ -395,7 +395,7 @@ const TournamentCard = ({ tournament }) => (
   </Card>
 );
 
-const Lobby = () => {
+const Arena = () => {
   // State for active sections and filters
   const [activeView, setActiveView] = useState("featured");
 
@@ -570,4 +570,4 @@ const Lobby = () => {
   );
 };
 
-export default Lobby;
+export default Arena;

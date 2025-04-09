@@ -403,7 +403,7 @@ const GameCard = ({ room, joinGame, loading, index }) => {
 
           <div className="flex flex-wrap gap-2">
             <div className="flex flex-wrap flex-1 justify-end">
-              <Link href="/lobby" className="w-full sm:w-auto">
+              <Link href="/arena" className="w-full sm:w-auto">
                 <Button
                   variant="default"
                   size="sm"

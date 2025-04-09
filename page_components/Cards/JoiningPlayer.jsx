@@ -237,10 +237,10 @@ const JoiningPlayer = ({ roomDataCopy, loadingBuyin, handleJoinRoom }) => {
                   <Button
                     variant="outline"
                     className="flex-1"
-                    onClick={() => (window.location.href = "/lobby")}
+                    onClick={() => (window.location.href = "/arena")}
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to Lobby
+                    Back to Arena
                   </Button>
                 </div>
               </div>

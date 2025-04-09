@@ -26,13 +26,13 @@ const BottomNavigation = () => {
      pb-safe-area-inset-bottom md:hidden z-10"
     >
       <Link
-        href="/lobby"
+        href="/arena"
         className={`flex flex-col items-center justify-center w-1/5 ${
-          activeTab === "/lobby" ? "text-primary" : "text-muted-foreground"
+          activeTab === "/arena" ? "text-primary" : "text-muted-foreground"
         }`}
       >
         <Home className="h-5 w-5" />
-        <span className="text-[10px] mt-1">Lobby</span>
+        <span className="text-[10px] mt-1">Arena</span>
       </Link>
 
       <button
@@ -70,9 +70,9 @@ const BottomNavigation = () => {
       </button>
 
       {/* <button
-        onClick={() => handleNavigation("/lobby?tab=tournaments")}
+        onClick={() => handleNavigation("/arena?tab=tournaments")}
         className={`flex flex-col items-center justify-center w-1/5 ${
-          activeTab === "/lobby" ? "text-primary" : "text-muted-foreground"
+          activeTab === "/arena" ? "text-primary" : "text-muted-foreground"
         }`}
       >
         <Trophy className="h-5 w-5" />

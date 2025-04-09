@@ -13,13 +13,13 @@ const EmptyState = ({ category }) => {
         "You're all caught up! No matches need your immediate attention.",
       action: (
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
-          <Link href="/lobby">
+          <Link href="/arena">
             <Button variant="default" className="w-full sm:w-auto">
               <Plus className="w-4 h-4 mr-2" />
               Create Match
             </Button>
           </Link>
-          <Link href="/lobby?tab=tournaments">
+          <Link href="/arena?tab=tournaments">
             <Button variant="outline" className="w-full sm:w-auto">
               <Trophy className="w-4 h-4 mr-2" />
               Browse Tournaments
@@ -34,13 +34,13 @@ const EmptyState = ({ category }) => {
       description: "You don't have any ongoing matches at the moment.",
       action: (
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
-          <Link href="/lobby">
+          <Link href="/arena">
             <Button variant="default" className="w-full sm:w-auto">
               <Users className="w-4 h-4 mr-2" />
-              Join Lobby Games
+              Join Arena Games
             </Button>
           </Link>
-          <Link href="/lobby">
+          <Link href="/arena">
             <Button variant="outline" className="w-full sm:w-auto">
               <Plus className="w-4 h-4 mr-2" />
               Create Match
@@ -55,16 +55,16 @@ const EmptyState = ({ category }) => {
       description: "You don't have any upcoming matches scheduled.",
       action: (
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
-          <Link href="/lobby?tab=tournaments">
+          <Link href="/arena?tab=tournaments">
             <Button variant="default" className="w-full sm:w-auto">
               <Trophy className="w-4 h-4 mr-2" />
               Browse Tournaments
             </Button>
           </Link>
-          <Link href="/lobby">
+          <Link href="/arena">
             <Button variant="outline" className="w-full sm:w-auto">
               <Users className="w-4 h-4 mr-2" />
-              Join Lobby Games
+              Join Arena Games
             </Button>
           </Link>
         </div>

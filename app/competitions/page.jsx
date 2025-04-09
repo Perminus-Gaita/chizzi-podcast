@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Matches from "./client";
-import LobbyLoader from "@/page_components/Lobby/LobbyLoader";
+import ArenaLoader from "@/page_components/Arena/ArenaLoader";
 
 export const metadata = {
   title: "Matches - Active Games & Matches | Wufwuf",
@@ -33,7 +33,7 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <Suspense fallback={<LobbyLoader />}>
+    <Suspense fallback={<ArenaLoader />}>
       <Matches />
     </Suspense>
   );

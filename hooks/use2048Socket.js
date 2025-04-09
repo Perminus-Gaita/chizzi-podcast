@@ -24,7 +24,7 @@ export const use2048Socket = () => {
 
     // Connection handlers
     socketInstance.on("connect", () => {
-      console.log("Connected to 2048 lobby");
+      console.log("Connected to 2048 arena");
       socketInstance.emit("getLeaderboard");
       setConnectionStatus("connected");
     });

@@ -110,7 +110,7 @@ export const HeroSection = () => {
       {/* CTA Section */}
       <div className="flex flex-col items-center gap-4 sm:gap-6 w-full px-4">
         {/* {userProfile ? ( */}
-        <Link href="/lobby" className="w-full sm:w-auto">
+        <Link href="/arena" className="w-full sm:w-auto">
           <button
             className="w-full sm:w-auto group relative px-6 sm:px-8 py-3 sm:py-3.5 bg-white/10 hover:bg-white/15 
               backdrop-blur-lg border border-white/10 rounded-xl
@@ -118,7 +118,7 @@ export const HeroSection = () => {
               hover:scale-105 hover:shadow-xl shadow-md"
           >
             <span className="flex items-center justify-center gap-2 group-hover:gap-4 transition-all duration-300">
-              Enter Lobby
+              Enter Arena
               <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-xl -z-10" />
@@ -193,7 +193,7 @@ export const BottomCTA = () => {
       animate="animate"
       className="mt-20 text-center"
     >
-      <Link href={userProfile?.uuid ? "/lobby" : "/lobby"}>
+      <Link href={userProfile?.uuid ? "/arena" : "/arena"}>
         <motion.button
           variants={buttonVariants}
           whileHover="hover"
@@ -202,7 +202,7 @@ export const BottomCTA = () => {
             shadow-[0_0_15px_rgba(99,102,241,0.5)]
             hover:shadow-[0_0_30px_rgba(99,102,241,0.8)]"
         >
-          {userProfile?.uuid ? "Enter Lobby" : "Start Playing Now"}
+          {userProfile?.uuid ? "Enter Arena" : "Start Playing Now"}
         </motion.button>
       </Link>
 

@@ -72,19 +72,19 @@ const LandingPageHeader = () => {
       name: "Tournaments",
       description: "Host and join competitive events with cash prizes",
       icon: Trophy,
-      href: "/lobby?tab=tournaments",
+      href: "/arena?tab=tournaments",
     },
     {
       name: "Game Rooms",
       description: "Create private rooms for casual matches",
       icon: Gamepad,
-      href: "/lobby?tab=games",
+      href: "/arena?tab=games",
     },
     {
       name: "Leaderboards",
       description: "Compete for top rankings and track your progress",
       icon: Medal,
-      href: "/lobby?tab=leaderboard",
+      href: "/arena?tab=leaderboard",
     },
     // {
     //   name: "Community",
@@ -251,8 +251,8 @@ const LandingPageHeader = () => {
               )}
             </div> */}
 
-            <Link href="/lobby" className="text-gray-300 hover:text-white">
-              Lobby
+            <Link href="/arena" className="text-gray-300 hover:text-white">
+              Arena
             </Link>
             <Link href="/kadi/learn" className="text-gray-300 hover:text-white">
               Learn Kadi
@@ -589,12 +589,12 @@ const LandingPageHeader = () => {
                 ))} */}
 
                 <Link
-                  href="/lobby"
+                  href="/arena"
                   className="flex items-center gap-3 p-3 text-gray-300 hover:bg-gray-800 rounded-lg group"
                 >
                   <Home className="h-5 w-5 text-gray-400 group-hover:text-white" />
                   <span className="text-base group-hover:text-white">
-                    Lobby
+                    Arena
                   </span>
                 </Link>
 

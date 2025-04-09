@@ -27,7 +27,7 @@ export async function POST(request) {
     const userSessionCookieString = await createUserSessionCookieString(user._id);
 
     // Construct redirect URL
-    const redirectUrl = `${process.env.MYHOSTNAME}/lobby`;
+    const redirectUrl = `${process.env.MYHOSTNAME}/arena`;
 
     // Return a JSON response with the redirect URL and cookie
     const response = NextResponse.json(

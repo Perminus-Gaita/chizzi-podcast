@@ -347,7 +347,7 @@ const LeftSideBar = ({ onSidebarClose, handleOpenWorkspace }) => {
 
   // Reordered navItems to match the required order with admin tags
   const navItems = [
-    { href: "/lobby", icon: Home, label: "Lobby" },
+    { href: "/arena", icon: Home, label: "Arena" },
     {
       href: "/matches",
       icon: Swords,

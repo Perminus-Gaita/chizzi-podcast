@@ -37,8 +37,8 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-import { useLobbySocket } from "@/hooks/useLobbySocket";
-import LobbyEmojiPicker from "@/components/LobbyEmojiPicker";
+import { useArenaSocket } from "@/hooks/useArenaSocket";
+import ArenaEmojiPicker from "@/components/ArenaEmojiPicker";
 
 const ChatMessage = ({
   message,
@@ -384,7 +384,7 @@ const ChallengeNotification = ({ challenge, onAccept, onDecline }) => {
   );
 };
 
-const LobbyChatContainer = ({
+const ArenaChatContainer = ({
   chatOpen,
   setChatOpen,
   isSmallScreen,
@@ -413,7 +413,7 @@ const LobbyChatContainer = ({
     loadingChat,
     onlineUsers,
     typingUsers,
-    sendLobbyMessage,
+    sendArenaMessage,
     handleMessageDeletion,
     handleTyping,
     addReaction,
@@ -426,7 +426,7 @@ const LobbyChatContainer = ({
     sendGameChallenge,
     acceptGameChallenge,
     declineGameChallenge,
-  } = useLobbySocket();
+  } = useArenaSocket();
 
   // Auto-scroll to bottom on new messages
   useEffect(() => {
@@ -440,7 +440,7 @@ const LobbyChatContainer = ({
     // console.log(chatMessage);
 
     if (chatMessage.trim()) {
-      sendLobbyMessage({
+      sendArenaMessage({
         message: chatMessage,
         user: {
           userId: userProfile?.uuid,
@@ -474,7 +474,7 @@ const LobbyChatContainer = ({
   const handleQuickCommand = (command) => {
     switch (command) {
       case "play":
-        sendLobbyMessage({
+        sendArenaMessage({
           message: "🎮 Looking for a game! Anyone want to play?",
           user: {
             userId: userProfile?.uuid,
@@ -484,7 +484,7 @@ const LobbyChatContainer = ({
         });
         break;
       case "tournament":
-        sendLobbyMessage({
+        sendArenaMessage({
           message:
             "🏆 Looking to join/organize a tournament! Who's interested?",
           user: {
@@ -591,7 +591,7 @@ const LobbyChatContainer = ({
             }`}
           />
           <span className="text-gray-700 dark:text-gray-300 font-semibold">
-            Lobby Chat
+            Arena Chat
           </span>
           <span className="text-xs text-gray-500">({onlineUsers} online)</span>
         </div>
@@ -665,7 +665,7 @@ const LobbyChatContainer = ({
                 <div className="flex items-center space-x-3 text-primary">
                   <MessageSquare className="w-7 h-7" />
                   <div>
-                    <h2 className="text-xl font-bold">Kadi Lobby Chat</h2>
+                    <h2 className="text-xl font-bold">Kadi Arena Chat</h2>
                     <p className="text-sm text-muted-foreground">
                       Where the Kadi community comes together
                     </p>
@@ -872,7 +872,7 @@ const LobbyChatContainer = ({
                   />
 
                   <div className="absolute right-12 bottom-2">
-                    <LobbyEmojiPicker
+                    <ArenaEmojiPicker
                       onEmojiSelect={handleEmojiSelect}
                       disabled={loadingChat}
                     />
@@ -905,4 +905,4 @@ const LobbyChatContainer = ({
   );
 };
 
-export default LobbyChatContainer;
+export default ArenaChatContainer;

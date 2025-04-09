@@ -380,7 +380,7 @@ const CardsTable = ({ roomSlug }) => {
                 <>
                   {/* Exit Button */}
                   <div className="fixed top-2 left-2 sm:top-4 sm:left-4 z-50 flex items-center gap-1 md:gap-2">
-                    <Link href="/lobby" passHref>
+                    <Link href="/arena" passHref>
                       <button
                         className="group relative bg-gradient-to-br from-red-500/90 to-red-600/90 
               hover:from-red-600/90 hover:to-red-700/90

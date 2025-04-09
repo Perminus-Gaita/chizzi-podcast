@@ -79,7 +79,7 @@ export async function POST(request) {
     console.log(payload);
 
     // Publish the message to the IoT topic
-    const publishResult = await iotPublish("lobbychat", payload);
+    const publishResult = await iotPublish("arenachat", payload);
 
     console.log("### THE RESULT ###");
     console.log(publishResult);

@@ -77,8 +77,8 @@ export async function GET(request) {
         const userSessionCookieString = await createUserSessionCookieString(upsertedUser._id);
         
         // Construct redirect URL with proper encoding.
-        //const redirectUrl = new URL('/lobby', process.env.MYHOSTNAME).toString();
-        const redirectUrl = `${process.env.MYHOSTNAME}/lobby`;
+        //const redirectUrl = new URL('/arena', process.env.MYHOSTNAME).toString();
+        const redirectUrl = `${process.env.MYHOSTNAME}/arena`;
 
         // Create response with secure cookie settings
         const response = NextResponse.redirect(redirectUrl);

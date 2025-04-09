@@ -1,7 +1,7 @@
 "use client";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const LobbyLoader = () => {
+const ArenaLoader = () => {
   return (
     <div className="flex flex-col gap-8 p-4">
       <div className="flex gap-4">
@@ -19,4 +19,4 @@ const LobbyLoader = () => {
   );
 };
 
-export default LobbyLoader;
+export default ArenaLoader;

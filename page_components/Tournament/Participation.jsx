@@ -1120,7 +1120,7 @@ const Participation = ({ tournament, setShowVerification, setIsOpenEntry }) => {
                 other available tournaments!
               </p>
               <Button asChild className="w-full sm:w-auto">
-                <Link href="/lobby">Browse Tournaments</Link>
+                <Link href="/arena">Browse Tournaments</Link>
               </Button>
             </CardContent>
           </Card>

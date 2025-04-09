@@ -624,11 +624,11 @@ const GameOverModal = ({
 
                           <Button
                             variant="outline"
-                            onClick={() => (window.location.href = "/lobby")}
+                            onClick={() => (window.location.href = "/arena")}
                             className="w-full"
                           >
                             <Home className="mr-2 h-4 w-4" />
-                            Return to Lobby
+                            Return to Arena
                           </Button>
                         </div>
                       )}

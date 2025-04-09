@@ -6,7 +6,7 @@ import io from "socket.io-client";
 
 const SOCKET_SERVER = process.env.NEXT_PUBLIC_SOCKET_URL;
 
-export const useLobbySocket = () => {
+export const useArenaSocket = () => {
   const [socket, setSocket] = useState(null);
   const [connectionStatus, setConnectionStatus] = useState("disconnected");
   const [chatsData, setChatsData] = useState({ messages: [] });
@@ -24,7 +24,7 @@ export const useLobbySocket = () => {
 
   // Initialize socket connection
   useEffect(() => {
-    const socketInstance = io(`${SOCKET_SERVER}/lobby`, {
+    const socketInstance = io(`${SOCKET_SERVER}/arena`, {
       withCredentials: true,
       transports: ["websocket"],
       reconnectionAttempts: 5,
@@ -36,8 +36,8 @@ export const useLobbySocket = () => {
     // Connection handlers
     socketInstance.on("connect", () => {
       setConnectionStatus("connected");
-      socketInstance.emit("joinLobby");
-      socketInstance.emit("getChatHistory", { type: "lobby" });
+      socketInstance.emit("joinArena");
+      socketInstance.emit("getChatHistory", { type: "arena" });
     });
 
     socketInstance.on("disconnect", () => setConnectionStatus("disconnected"));
@@ -166,7 +166,7 @@ export const useLobbySocket = () => {
   }, []);
 
   // Send message handler
-  const sendLobbyMessage = useCallback(
+  const sendArenaMessage = useCallback(
     async ({ message, user }) => {
       // console.log("## started ...");
       // console.log(message);
@@ -312,7 +312,7 @@ export const useLobbySocket = () => {
     loadingChat,
     onlineUsers,
     typingUsers,
-    sendLobbyMessage,
+    sendArenaMessage,
     handleMessageDeletion,
     handleTyping,
     addReaction,

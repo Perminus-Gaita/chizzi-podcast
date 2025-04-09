@@ -130,7 +130,7 @@ export default function AppLayout({ children }) {
           ) : (
             <CommunityLeftSidebar
               handleSidebarClose={handleSidebarClose}
-              showOnlyLobby={true}
+              showOnlyArena={true}
             />
           )}
         </aside>

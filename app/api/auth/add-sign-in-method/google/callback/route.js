@@ -72,8 +72,8 @@ export async function GET(request) {
 
         await addGoogleSignInToAccount(sessionUser._id, googleData);
 
-        // Redirect to the lobby or another appropriate page
-        const redirectUrl = `${process.env.MYHOSTNAME}/lobby`;
+        // Redirect to the arena or another appropriate page
+        const redirectUrl = `${process.env.MYHOSTNAME}/arena`;
         return NextResponse.redirect(redirectUrl);
     } catch (error) {
         console.error('Error processing Google sign-in callback:', error);

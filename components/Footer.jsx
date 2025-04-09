@@ -109,8 +109,8 @@ const Footer = () => {
                 Platform
               </h3>
               <ul className="space-y-2">
-                <FooterLink href="/lobby">Tournaments</FooterLink>
-                <FooterLink href="/lobby">Games</FooterLink>
+                <FooterLink href="/arena">Tournaments</FooterLink>
+                <FooterLink href="/arena">Games</FooterLink>
                 <FooterLink href="/plans">Plans</FooterLink>
               </ul>
             </div>

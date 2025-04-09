@@ -107,7 +107,7 @@ const WorkspaceInviteResponse = () => {
 
       if (inviteResponse === "accepted") {
         setTimeout(() => {
-          router.push("/lobby");
+          router.push("/arena");
         }, 1500);
       }
     } catch (err) {

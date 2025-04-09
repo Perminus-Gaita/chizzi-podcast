@@ -3,7 +3,7 @@ export const getOnboardingStatus = (onboardingStatus) => {
     case "discover":
       return "/onboarding/discover";
     case "done":
-      return "/lobby";
+      return "/arena";
     default:
       return null;
   }

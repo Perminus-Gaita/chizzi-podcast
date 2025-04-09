@@ -77,7 +77,7 @@ const SuccessOnboardingModal = ({
 
       // Use setTimeout to ensure state is fully processed
       setTimeout(() => {
-        router.push("/lobby");
+        router.push("/arena");
       }, 2000);
     } catch (error) {
       console.error("Failed to update state:", error);

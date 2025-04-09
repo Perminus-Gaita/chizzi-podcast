@@ -3,7 +3,7 @@ export default function manifest() {
         name: 'Wufwuf',
         short_name: 'Wufwuf',
         description: 'Organize, manage and play Kadi esports tournaments and games.',
-        start_url: '/lobby',
+        start_url: '/arena',
         id: '/',
         display: 'standalone',
         orientation: 'portrait',

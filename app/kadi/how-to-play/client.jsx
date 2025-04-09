@@ -228,7 +228,7 @@ const HowToPlayKadi = () => {
                 )}
               </button>
 
-              <Link href="/lobby">
+              <Link href="/arena">
                 <Button
                   size="lg"
                   variant="outline"

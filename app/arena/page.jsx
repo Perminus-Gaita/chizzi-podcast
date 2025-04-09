@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import Lobby from "./client";
-// import Lobby from "./client1";
-import LobbyLoader from "@/page_components/Lobby/LobbyLoader";
+import Arena from "./client";
+// import Arena from "./client1";
+import ArenaLoader from "@/page_components/Arena/ArenaLoader";
 
 export const metadata = {
   title:
-    "Lobby - Wufwuf : Play KingKadi - The Fun & Fast-Paced Card Game - Wufwuf",
+    "Arena - Wufwuf : Play KingKadi - The Fun & Fast-Paced Card Game - Wufwuf",
   description:
     "Challenge your friends and family to a thrilling game of KingKadi! Join or create a room and experience the excitement on Wufwuf, the all-in-one social media and gaming platform.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata = {
     title: "Unleash the King in You - Play KingKadi on Wufwuf",
     description:
       "KingKadi, the exciting card game, is now available on Wufwuf! Join or create a room, challenge your friends, and have a blast. Play while you manage your social media with Wufwuf.",
-    image: "https://www.wufwuf.io/public/kingkadi/kingkadi_lobby_image.jpg", // Replace with KingKadi-specific image
+    image: "https://www.wufwuf.io/public/kingkadi/kingkadi_arena_image.jpg", // Replace with KingKadi-specific image
   },
   twitter: {
     title: "KingKadi: The Card Game You Can't Miss! Play Now on Wufwuf",
@@ -39,8 +39,8 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <Suspense fallback={<LobbyLoader />}>
-      <Lobby />
+    <Suspense fallback={<ArenaLoader />}>
+      <Arena />
     </Suspense>
   );
 };

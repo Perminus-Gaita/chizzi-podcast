@@ -15,7 +15,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Home } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const navItems = [{ href: "/lobby", icon: Home, label: "Lobby" }];
+const navItems = [{ href: "/arena", icon: Home, label: "Arena" }];
 
 const NavItem = ({ item, isActive, openLeftSidebar, onSidebarClose }) => {
   const Icon = item.icon;
@@ -73,7 +73,7 @@ const NavItem = ({ item, isActive, openLeftSidebar, onSidebarClose }) => {
   return content;
 };
 
-const CommunityLeftSidebar = ({ onSidebarClose, showOnlyLobby = false }) => {
+const CommunityLeftSidebar = ({ onSidebarClose, showOnlyArena = false }) => {
   const pathname = usePathname();
   const openLeftSidebar = useSelector((state) => state.page.openLeftSidebar);
 

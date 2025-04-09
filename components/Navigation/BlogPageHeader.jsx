@@ -86,19 +86,19 @@ const BlogPageHeader = () => {
       name: "Tournaments",
       description: "Host and join competitive events with cash prizes",
       icon: Trophy,
-      href: "/lobby?tab=tournaments",
+      href: "/arena?tab=tournaments",
     },
     {
       name: "Game Rooms",
       description: "Create private rooms for casual matches",
       icon: Gamepad,
-      href: "/lobby?tab=games",
+      href: "/arena?tab=games",
     },
     {
       name: "Leaderboards",
       description: "Compete for top rankings and track your progress",
       icon: Medal,
-      href: "/lobby?tab=leaderboard",
+      href: "/arena?tab=leaderboard",
     },
     // {
     //   name: "Community",
@@ -267,11 +267,11 @@ const BlogPageHeader = () => {
               )}
             </div> */}
 
-            <Link href="/lobby" className="text-gray-700 dark:text-gray-100">
-              Lobby
+            <Link href="/arena" className="text-gray-700 dark:text-gray-100">
+              Arena
             </Link>
 
-            <Link href="/lobby" className="text-gray-700 dark:text-gray-100">
+            <Link href="/arena" className="text-gray-700 dark:text-gray-100">
               Tournaments
             </Link>
 

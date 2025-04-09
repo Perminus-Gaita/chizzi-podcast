@@ -116,7 +116,7 @@ const QuickAction = ({ icon: Icon, label, command, onClick }) => (
   </button>
 );
 
-const LobbyChatContainerDummy = ({
+const ArenaChatContainerDummy = ({
   chatOpen,
   setChatOpen,
   isSmallScreen,
@@ -255,7 +255,7 @@ const LobbyChatContainerDummy = ({
         <div className="flex items-center space-x-2">
           <div className="w-2 h-2 rounded-full animate-pulse bg-green-500" />
           <span className="text-gray-700 dark:text-gray-300 font-semibold">
-            Lobby Chat
+            Arena Chat
           </span>
           <span className="text-xs text-gray-500">(12 online)</span>
         </div>
@@ -323,7 +323,7 @@ const LobbyChatContainerDummy = ({
                 <div className="flex items-center space-x-3 text-primary">
                   <MessageSquare className="w-7 h-7" />
                   <div>
-                    <h2 className="text-xl font-bold">Kadi Lobby Chat</h2>
+                    <h2 className="text-xl font-bold">Kadi Arena Chat</h2>
                     <p className="text-sm text-muted-foreground">
                       Where the Kadi community comes together
                     </p>
@@ -449,4 +449,4 @@ const LobbyChatContainerDummy = ({
   );
 };
 
-export default LobbyChatContainerDummy;
+export default ArenaChatContainerDummy;

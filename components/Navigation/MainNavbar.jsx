@@ -227,7 +227,7 @@ const MainNavbar = ({ handleSidebarClose, handleSidebarOpen }) => {
             </button>
           )}
 
-          <Link href={userProfile ? "/lobby" : "/"}>
+          <Link href={userProfile ? "/arena" : "/"}>
             <Image
               src={mode === "light" ? "/your-logo-here.png" : "/your-logo-here.png"}
               alt="logo"

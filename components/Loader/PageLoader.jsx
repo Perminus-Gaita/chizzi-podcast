@@ -33,7 +33,7 @@ const PageLoader = () => {
         return "Retrieving your battles...";
       case "analytics":
         return "Crunching your numbers...";
-      case "lobby":
+      case "arena":
       case "tournaments":
         return "Preparing Kadi Arena...";
       case "settings":

@@ -303,10 +303,10 @@ const GameOverModalDemo = ({ openGameOverModal, roomData }) => {
                     {loading ? "Creating..." : "New Game"}
                   </Button>
 
-                  <Link href={`/lobby`} className="w-full">
+                  <Link href={`/arena`} className="w-full">
                     <Button variant="outline" className="w-full">
                       <Home className="mr-2 h-4 w-4" />
-                      Return to Lobby
+                      Return to Arena
                     </Button>
                   </Link>
                 </div>
