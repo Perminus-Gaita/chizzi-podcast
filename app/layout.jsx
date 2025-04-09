@@ -15,49 +15,29 @@ import MicrosoftClarity from "./microsoft-clarity";
 import StyledJsxRegistry from "./registry";
 
 export const metadata = {
-  metadataBase: new URL("https://wufwuf.io"),
+  metadataBase: new URL("https://your-sports-site-demo.vercel.app"),
   title: {
     default:
-      "Wufwuf - Organize, manage and play Kadi esports tournaments and games.",
-    template: "%s | Wufwuf Kadi Esports Tournaments",
+      "Your site demo",
+    template: "%s | Your site demo",
   },
   description:
     "Join competitive Kadi esports card game tournaments, play against friends, compete in sponsored events, and win real prizes. Experience the ultimate card gaming platform with single-player, multiplayer, and tournament modes.",
   keywords: [
-    "kadi esports tournaments",
-    "kadi tournaments",
-    "card game tournaments",
-    "online card games",
-    "competitive card gaming",
-    "sponsored tournaments",
-    "gaming prizes",
-    "card game platform",
-    "multiplayer card games",
-    "AI card games",
-    "tournament platform",
-    "esports tournaments",
-    "gaming merchandise",
-    "card game competition",
-    "online gaming",
-    "prize tournaments",
-    "professional gaming",
-    "card game strategy",
-    "tournament rewards",
-    "gaming community",
-    "competitive gaming",
+    "your own fantasy sports site"
   ],
   authors: [{ name: "Wufwuf" }],
   creator: "Wufwuf",
-  publisher: "Wufwuf Esports",
+  publisher: "Wufwuf Esports & Fantasy",
 
   openGraph: {
     type: "website",
-    siteName: "Wufwuf Esports",
+    siteName: "Your site demo",
     title:
-      "Wufwuf - Organize, manage and play Kadi esports tournaments and games",
+      "Your site demo",
     description:
-      "Compete in Kadi esports tournaments, win prizes, and join a thriving gaming community. Features AI opponents, multiplayer modes, and sponsored events.",
-    url: "https://wufwuf.io",
+      "Your site demo",
+    url: "https://your-sports-site-demo.vercel.app",
     images: [
       {
         url: "/images/wufwuf-tournament-preview.jpg",
@@ -68,15 +48,15 @@ export const metadata = {
     ],
   },
 
-  twitter: {
-    card: "summary_large_image",
-    site: "@wufwuf_esports_gaming",
-    creator: "@wufwuf_esports_gaming",
-    title: "Wufwuf - Competitive Kadi Tournaments",
-    description:
-      "Join the ultimate Kadi tournament platform. Compete, win, and dominate!",
-    images: ["/images/wufwuf-tournament-preview.jpg"],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: "@wufwuf_esports_gaming",
+  //   creator: "@wufwuf_esports_gaming",
+  //   title: "Wufwuf - Competitive Kadi Tournaments",
+  //   description:
+  //     "Join the ultimate Kadi tournament platform. Compete, win, and dominate!",
+  //   images: ["/images/wufwuf-tournament-preview.jpg"],
+  // },
 
   verification: {
     google: "your-google-verification-code",
@@ -86,22 +66,22 @@ export const metadata = {
     },
   },
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: true,
+  //     "max-video-preview": -1,
+  //     "max-image-preview": "large",
+  //     "max-snippet": -1,
+  //   },
+  // },
 
   alternates: {
-    canonical: "https://wufwuf.io",
+    canonical: "https://your-sports-site-demo.vercel.app",
     languages: {
-      "en-US": "https://wufwuf.io/en-US",
+      "en-US": "https://your-sports-site-demo.vercel.app/en-US",
     },
   },
 
